@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 14:25:14 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/14 14:31:17 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/15 13:47:42 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void ft_free(t_table **table)
 	int 	i;
 
 	i = -1;
+	if (!*table || !(*table)->head)
+		return ;
 	while (++i < (*table)->nb_philo)
 	{
 		temp = (*table)->head->next;

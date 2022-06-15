@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 13:03:17 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/14 13:56:36 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/15 13:33:01 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,11 @@ typedef struct s_table
 	t_philo *tail;
 	int		nb_philo;
 }	t_table;
-
+typedef struct s_vars
+{
+	t_table		*table;
+	pthread_t	*threads;
+}t_vars;
 #endif
 
 

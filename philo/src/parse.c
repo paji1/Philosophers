@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 09:29:11 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/15 10:24:06 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/15 13:26:04 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,30 @@ static int	check_all_arguments(int argc, char **argv)
 	if (ft_is_str_nb(argv[4]))
 		return (print_error\
 			("Fourth Argument must be all digit (time to sleep)\n"), 1);
+	if (argc == 6 && ft_is_str_nb(argv[5]))
+	return (0);
+}
+static int check_if_inrange(int argc, char **argv)
+{
+	int		i;
+	char	*s;
+	
+	i = 0;
+	while (++i < argc)
+	{
+		s = ft_itoa(ft_atoi((char *)argv[i]));
+		if (ft_strcmp((const char *)argv[i],s))
+		return (free(s), print_error\
+			("the number not in range of integer \n"), 1);
+		free(s);
+	}
 	return (0);
 }
 
-int	parse(t_table *table, int argc, char **argv)
+int	parse(int argc, char **argv)
 {
 	if (check_all_arguments(argc, argv))
 		return (1);
-	
+	if (check_if_inrange(argc, argv))
+		return (1);
 }

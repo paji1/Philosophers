@@ -6,10 +6,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jun 15 09:32:39 2022
+# Make data base, printed on Wed Jun 15 13:16:08 2022
 
 # Variables
- 
 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
@@ -22,7 +21,7 @@ WSLENV = VSCODE_WSL_EXT_LOCATION/up
 # makefile (from 'makefile', line 21)
 OBJ = $(addprefix obj/, $(SRC:.c=.o))
 # makefile (from 'makefile', line 20)
-SRC = main.c linked_list.c ft_free.c parse.c
+SRC = main.c linked_list.c ft_free.c parse.c init.c
 # environment
 VSCODE_LOG_NATIVE = false
 # makefile (from 'makefile', line 25)
@@ -70,9 +69,9 @@ VSCODE_PIPE_LOGGING = true
 # environment
 PWD = /home/taha/desktop/Philosophers/philo
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-3d0bf8a3-462d-4e5d-bd8b-fef6159a82c1.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-7629e38e-624f-48d5-af7b-721b2acdb06b.sock
 # environment
-WSL_INTEROP = /run/WSL/6326_interop
+WSL_INTEROP = /run/WSL/11_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -80,7 +79,7 @@ HOME = /home/taha
 # environment
 LOGNAME = taha
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # makefile (from 'makefile', line 22)
 CFLAG = -pthread
 # environment
@@ -169,9 +168,9 @@ WSL_DISTRO_NAME = Ubuntu-18.04
 # Directories
 
 # . (device 2064, inode 2238): 9 files, no impossibilities.
-# src (device 2064, inode 70387): 6 files, no impossibilities so far.
+# src (device 2064, inode 70387): 7 files, no impossibilities so far.
 
-# 15 files, no impossibilities in 2 directories.
+# 16 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -200,9 +199,9 @@ all: philo
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/7=0%
 
-philo: libft/library/libft.a obj/main.o obj/linked_list.o obj/ft_free.o obj/parse.o
+philo: libft/library/libft.a obj/main.o obj/linked_list.o obj/ft_free.o obj/parse.o obj/init.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-14 14:32:46.498884
+#  Last modified 2022-06-15 13:10:57.2213109
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -219,7 +218,7 @@ obj/ft_free.o:
 obj/main.o: src/main.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  Last modified 2022-06-14 14:32:46.348884
+#  Last modified 2022-06-15 13:10:57.0013109
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
@@ -248,7 +247,7 @@ obj/main.o: src/main.c
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-15 09:32:37.3780226
+#  Last modified 2022-06-15 13:16:06.9313109
 #  File has been updated.
 #  Successfully updated.
 
@@ -263,7 +262,7 @@ fclean: clean
 # Not a target:
 src/main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-15 09:29:01.5180226
+#  Last modified 2022-06-15 13:15:20.0713109
 #  File has been updated.
 #  Successfully updated.
 
@@ -278,6 +277,7 @@ re: fclean all
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 63):
+ 
 	# ./main
 
 # Not a target:
@@ -295,29 +295,34 @@ clean:
 	@ $(RM) $(OBJ)
 	
 
+# Not a target:
+obj/init.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 libft/library/libft.a:
 #  Implicit rule search has not been done.
- 
-#  Last modified 2022-06-14 14:32:46.318884
+#  Last modified 2022-06-15 13:10:56.9713109
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 52):
 	@ make -C libft
 
 # files hash-table stats:
-# Load=14/1024=1%, Rehash=0, Collisions=0/39=0%
+# Load=15/1024=1%, Rehash=0, Collisions=0/41=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 30 / storage = 269 B / avg = 8 B
-# current buf: size = 8162 B / used = 269 B / count = 30 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 32 / storage = 287 B / avg = 8 B
+# current buf: size = 8162 B / used = 287 B / count = 32 / avg = 8 B
 
-# strcache performance: lookups = 51 / hit rate = 41%
+# strcache performance: lookups = 53 / hit rate = 39%
 # hash-table stats:
-# Load=30/8192=0%, Rehash=0, Collisions=2/51=4%
-# Finished Make data base on Wed Jun 15 09:32:39 2022
+# Load=32/8192=0%, Rehash=0, Collisions=2/53=4%
+# Finished Make data base on Wed Jun 15 13:16:08 2022
 
  

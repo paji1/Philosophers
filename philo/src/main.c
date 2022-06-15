@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 09:17:26 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/15 10:17:08 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/15 13:50:14 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,13 @@
 
 int main(int argc, char **argv)
 {
-	t_table *table;
+	t_vars vars;
 
-	if (parse(table, argc, argv))
+	if (parse(argc, argv))
 		return (1);
-	
-	init_table(&table, 7);
+	if (init(&vars, argc, argv))
+		return (1);
 
-	
-	// ft_free(&table);
+	ft_free(&vars.table);
 	return 0;
 }
