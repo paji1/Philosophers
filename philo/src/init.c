@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 10:10:37 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/15 13:53:24 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/15 14:08:26 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	init(t_vars *vars, int argc, char **argv)
 	int	i;
 
 	nb = atoi(argv[1]);
+	if (!nb)
+		return (1);
 	i = -1;
 	vars->table = NULL;
 	if (!init_table(&vars->table, nb))

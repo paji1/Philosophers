@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 09:17:26 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/15 13:50:14 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/15 14:02:27 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,13 @@ int main(int argc, char **argv)
 		return (1);
 	if (init(&vars, argc, argv))
 		return (1);
+	
+	// int i = -1;
+	// while (++i < vars.table->nb_philo)
+	// {
+	// 	printf("%d\n", vars.table->head->id);
+	// 	vars.table->head = vars.table->head->next;
+	// }
 
 	ft_free(&vars.table);
 	return 0;

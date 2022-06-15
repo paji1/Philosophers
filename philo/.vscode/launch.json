@@ -9,7 +9,7 @@
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "/home/taha/desktop/Philosophers/philo/philo",
-			"args": [2,3,4,5],
+			"args": [0,3,4,5],
 			"stopAtEntry": false,
 			"cwd": "${fileDirname}",
 			"environment": [],
