@@ -1,0 +1,6 @@
+{
+	"makefile.extensionOutputFolder": "./.vscode",
+	"files.associations": {
+		"philo.h": "c"
+	}
+}

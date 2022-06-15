@@ -1,0 +1,11 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/taha/desktop/Philosophers/philo'
+mkdir -p obj
+gcc -g -pthread -c src/main.c -o obj/main.o
+echo '\033[0;34m'"Making the main.o"'\033[0m'
+mkdir -p obj
+gcc -g -pthread -c src/parse.c -o obj/parse.o
+echo '\033[0;34m'"Making the parse.o"'\033[0m'
+gcc -g -pthread obj/main.o obj/linked_list.o obj/ft_free.o obj/parse.o libft/library/libft.a -o ./philo
+make: Leaving directory '/home/taha/desktop/Philosophers/philo'
+ 

@@ -1,0 +1,323 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2014 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Wed Jun 15 09:32:39 2022
+
+# Variables
+ 
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+WSLENV = VSCODE_WSL_EXT_LOCATION/up
+# default
+.SHELLFLAGS := -c
+# makefile (from 'makefile', line 21)
+OBJ = $(addprefix obj/, $(SRC:.c=.o))
+# makefile (from 'makefile', line 20)
+SRC = main.c linked_list.c ft_free.c parse.c
+# environment
+VSCODE_LOG_NATIVE = false
+# makefile (from 'makefile', line 25)
+LIBRARY = libft/library/libft.a
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /home/taha/desktop/Philosophers/philo
+# makefile
+SHELL = /bin/sh
+# makefile (from 'makefile', line 16)
+RM = rm -rf
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
+# environment
+_ = /bin/sh
+# makefile (from 'makefile', line 1)
+MAKEFILE_LIST :=  makefile
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_CWD = /mnt/c/Users/Taha/AppData/Local/Programs/Microsoft VS Code
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /home/taha/.vscode-server/bin/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/CMake/bin:/mnt/c/MinGW/bin:/mnt/c/Program Files (x86)/GnuWin32/bin:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin:/mnt/c/Users/Taha/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/Taha/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/Taha/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Taha/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Taha/AppData/Local/Programs/Microsoft VS Code Insiders/bin:/mnt/c/Program Files/JetBrains/PyCharm 2021.3.3/bin:/mnt/c/MinGW/bin:/mnt/c/Program Files (x86)/GnuWin32/bin
+# environment
+VSCODE_WSL_DEBUG_INFO = true
+# environment
+VSCODE_LOG_STACK = false
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# automatic
+%F = $(notdir $%)
+# makefile (from 'makefile', line 29)
+COLOR = '\033[0;32m'
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /home/taha/desktop/Philosophers/philo
+# environment
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-3d0bf8a3-462d-4e5d-bd8b-fef6159a82c1.sock
+# environment
+WSL_INTEROP = /run/WSL/6326_interop
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/taha
+# environment
+LOGNAME = taha
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# makefile (from 'makefile', line 22)
+CFLAG = -pthread
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 1
+# makefile (from 'makefile', line 17)
+CC = gcc -g
+# default
+MAKE_VERSION := 4.1
+# environment
+USER = taha
+# makefile
+.DEFAULT_GOAL := all
+# makefile (from 'makefile', line 36)
+NAME = ./philo
+# makefile (from 'makefile', line 31)
+RE = '\033[0;34m'
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/Taha/.vscode/extensions/ms-vscode-remote.remote-wsl-0.66.3
+# default
+MAKE_COMMAND := make
+# makefile (from 'makefile', line 30)
+NC = '\033[0m'
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# makefile (from 'makefile', line 14)
+OS = $(shell uname -s)
+# makefile (from 'makefile', line 32)
+RED = '\033[0;31m'
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# environment
+VSCODE_HANDLES_SIGPIPE = true
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+LC_ALL = C
+# environment
+HOSTTYPE = x86_64
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# default
+.RECIPEPREFIX := 
+# environment
+LANG = C
+# environment
+TERM = xterm-256color
+# environment
+VSCODE_EXTHOST_WILL_SEND_SOCKET = true
+# environment
+WSL_DISTRO_NAME = Ubuntu-18.04
+# variable set hash-table stats:
+# Load=74/1024=7%, Rehash=0, Collisions=5/113=4%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 2064, inode 2238): 9 files, no impossibilities.
+# src (device 2064, inode 70387): 6 files, no impossibilities so far.
+
+# 15 files, no impossibilities in 2 directories.
+
+# Implicit Rules
+
+obj/%.o: src/%.c
+#  recipe to execute (from 'makefile', line 46):
+	@ mkdir -p obj
+	@ $(CC) $(CFLAG) -c $< -o $@
+	@ echo ${RE}"Making the $(notdir $@)"${NC}
+
+# 1 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+# Not a target:
+obj/linked_list.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: philo
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/7=0%
+
+philo: libft/library/libft.a obj/main.o obj/linked_list.o obj/ft_free.o obj/parse.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-14 14:32:46.498884
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/7=0%
+#  recipe to execute (from 'makefile', line 43):
+	@ $(CC) $(CFLAG) $(OBJ) $(LIBRARY) -o $(NAME)
+
+# Not a target:
+obj/ft_free.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+obj/main.o: src/main.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'main'
+#  Last modified 2022-06-14 14:32:46.348884
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := obj/main.o
+# automatic
+# % := 
+# automatic
+# * := main
+# automatic
+# + := src/main.c
+# automatic
+# | := 
+# automatic
+# < := src/main.c
+# automatic
+# ^ := src/main.c
+# automatic
+# ? := src/main.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=5/18=28%
+#  recipe to execute (from 'makefile', line 46):
+	@ mkdir -p obj
+	@ $(CC) $(CFLAG) -c $< -o $@
+	@ echo ${RE}"Making the $(notdir $@)"${NC}
+
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-15 09:32:37.3780226
+#  File has been updated.
+#  Successfully updated.
+
+fclean: clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 59):
+	@ make fclean -C libft 
+	@ $(RM) $(NAME)
+
+# Not a target:
+src/main.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-15 09:29:01.5180226
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+re: fclean all
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 63):
+	# ./main
+
+# Not a target:
+obj/parse.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 55):
+	@ make clean -C libft 
+	@ $(RM) $(OBJ)
+	
+
+libft/library/libft.a:
+#  Implicit rule search has not been done.
+ 
+#  Last modified 2022-06-14 14:32:46.318884
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'makefile', line 52):
+	@ make -C libft
+
+# files hash-table stats:
+# Load=14/1024=1%, Rehash=0, Collisions=0/39=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 30 / storage = 269 B / avg = 8 B
+# current buf: size = 8162 B / used = 269 B / count = 30 / avg = 8 B
+
+# strcache performance: lookups = 51 / hit rate = 41%
+# hash-table stats:
+# Load=30/8192=0%, Rehash=0, Collisions=2/51=4%
+# Finished Make data base on Wed Jun 15 09:32:39 2022
+
+ 
