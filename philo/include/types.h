@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 13:03:17 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/15 13:33:01 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/18 23:02:14 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,40 @@
 # define SLEPPING	1
 # define EATING		2
 # define DYE		3
+# define TAKE_RIGHT 4
+# define TAKE_LEFT 5
+
+typedef struct s_vars t_vars;
+typedef struct timeval t_timeval;
 
 typedef struct	s_philo
 {
 	int				id;
 	int				state;
-	int				fork_right;
-	int				fork_left;
-	int				last_eat;
+	int 			last_eat;
+	t_vars			*vars;
 	struct 			s_philo *next;
 	struct 			s_philo *prev;
 }	t_philo;
 	
 typedef struct s_table
 {
-	t_philo *head;
-	t_philo *tail;
-	int		nb_philo;
+	t_philo 		*head;
+	t_philo 		*tail;
+	int				time_to_die;
+	int				time_to_eat;
+	int	 			time_to_sleep;
+	int 			must_to_eat;
+	int				nb_philo;
 }	t_table;
+
 typedef struct s_vars
 {
-	t_table		*table;
-	pthread_t	*threads;
+	t_timeval		eposh;
+	t_timeval		current_time;
+	pthread_mutex_t	*fork;
+	t_table			*table;
+	pthread_t		*threads;
 }t_vars;
 #endif
 

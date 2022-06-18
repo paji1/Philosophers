@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 13:26:37 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/15 13:52:32 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/17 21:41:03 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ t_philo *add_new_philo(int nb)
 		id = nb;
 	philo->id = id--;
 	philo->state = THINKING;
-	philo->fork_left = 1;
-	philo->fork_right = 1;
 	philo->last_eat = 0;
 	philo->next = NULL;
 	philo->prev = NULL;

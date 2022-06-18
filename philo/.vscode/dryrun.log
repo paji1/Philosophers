@@ -1,8 +1,12 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/taha/desktop/Philosophers/philo'
+make -C libft
 mkdir -p obj
 gcc -g -pthread -c src/main.c -o obj/main.o
 echo '\033[0;34m'"Making the main.o"'\033[0m'
+mkdir -p obj
+gcc -g -pthread -c src/linked_list.c -o obj/linked_list.o
+echo '\033[0;34m'"Making the linked_list.o"'\033[0m'
 mkdir -p obj
 gcc -g -pthread -c src/ft_free.c -o obj/ft_free.o
 echo '\033[0;34m'"Making the ft_free.o"'\033[0m'
@@ -12,6 +16,9 @@ echo '\033[0;34m'"Making the parse.o"'\033[0m'
 mkdir -p obj
 gcc -g -pthread -c src/init.c -o obj/init.o
 echo '\033[0;34m'"Making the init.o"'\033[0m'
-gcc -g -pthread obj/main.o obj/linked_list.o obj/ft_free.o obj/parse.o obj/init.o libft/library/libft.a -o ./philo
+mkdir -p obj
+gcc -g -pthread -c src/destroy_mutex.c -o obj/destroy_mutex.o
+echo '\033[0;34m'"Making the destroy_mutex.o"'\033[0m'
+gcc -g -pthread obj/main.o obj/linked_list.o obj/ft_free.o obj/parse.o obj/init.o obj/destroy_mutex.o libft/library/libft.a -o ./philo
 make: Leaving directory '/home/taha/desktop/Philosophers/philo'
  

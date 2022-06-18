@@ -6,26 +6,77 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 10:10:37 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/15 14:08:26 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/18 23:07:57 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
+
+static int create_table_ofthreads(t_vars *vars, int argc)
+{
+	vars->threads = malloc(vars->table->nb_philo * sizeof(pthread_t));
+	if (!vars->threads)
+		return (1);
+	return (0);
+}
+
+static int init_philo_to_table(t_vars *vars, int nb)
+{
+	int	i;
+
+	i = -1;
+	while (++i < nb)
+		if (!add_first(vars->table, add_new_philo(nb)))
+			return (ft_free(&vars->table), 1);
+	return (0);
+}
+
+static int	create_threads(t_vars *vars, int nb)
+{
+	t_philo	*philo;
+	int	 	j;
+
+	j = -1;
+	philo = vars->table->head;
+	while (++j < nb)
+	{
+		philo->vars = vars;
+		if (pthread_create(&vars->threads[j], NULL, philo_routine, philo))
+			return (ft_free(&vars->table), free(vars->threads), 1);
+		philo = philo->next;
+	}
+	return 0;
+}
+
+static void init_times(t_vars *vars, int argc, char **argv)
+{
+	vars->table->time_to_die = ft_atoi(argv[2]);
+	vars->table->time_to_eat = ft_atoi(argv[3]);
+	vars->table->time_to_sleep = ft_atoi(argv[4]);
+	if (argc == 6)
+		vars->table->must_to_eat = ft_atoi(argv[5]);
+}
+
 int	init(t_vars *vars, int argc, char **argv)
 {
 	int	nb;
-	int	i;
 
 	nb = atoi(argv[1]);
 	if (!nb)
 		return (1);
-	i = -1;
 	vars->table = NULL;
 	if (!init_table(&vars->table, nb))
 		return (ft_free(&vars->table), 1);
-	while (++i < nb)
-		if(!add_first(vars->table, add_new_philo(nb)))
-			return (ft_free(&vars->table), 1);
+	init_times(vars, argc, argv);
+	if (init_philo_to_table(vars, nb))
+		return (1);
+	if (create_table_ofthreads(vars, argc))
+		(ft_free(&vars->table), 1);
+	if (init_mutexes(vars))
+		(ft_free(&vars->table), 1);	
+		gettimeofday(&vars->eposh, NULL);
+	if (create_threads(vars, nb))
+		return (1);
 	return (0);
 }
