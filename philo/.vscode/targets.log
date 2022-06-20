@@ -6,9 +6,10 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Jun 18 21:23:26 2022
+# Make data base, printed on Mon Jun 20 17:45:23 2022
 
 # Variables
+ 
 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
@@ -18,13 +19,13 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 WSLENV = VSCODE_WSL_EXT_LOCATION/up
 # default
 .SHELLFLAGS := -c
-# makefile (from 'makefile', line 21)
+# makefile (from 'makefile', line 22)
 OBJ = $(addprefix obj/, $(SRC:.c=.o))
 # makefile (from 'makefile', line 20)
-SRC = main.c linked_list.c ft_free.c parse.c init.c destroy_mutex.c
+SRC = main.c linked_list.c ft_free.c parse.c init.c destroy_mutex.c print_state.c get_time.c
 # environment
 VSCODE_LOG_NATIVE = false
-# makefile (from 'makefile', line 25)
+# makefile (from 'makefile', line 26)
 LIBRARY = libft/library/libft.a
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
@@ -62,7 +63,7 @@ VSCODE_LOG_STACK = false
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # automatic
 %F = $(notdir $%)
-# makefile (from 'makefile', line 29)
+# makefile (from 'makefile', line 30)
 COLOR = '\033[0;32m'
 # environment
 VSCODE_PIPE_LOGGING = true
@@ -80,7 +81,7 @@ HOME = /home/taha
 LOGNAME = taha
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
-# makefile (from 'makefile', line 22)
+# makefile (from 'makefile', line 23)
 CFLAG = -pthread
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
@@ -102,9 +103,9 @@ MAKE_VERSION := 4.1
 USER = taha
 # makefile
 .DEFAULT_GOAL := all
-# makefile (from 'makefile', line 36)
+# makefile (from 'makefile', line 37)
 NAME = ./philo
-# makefile (from 'makefile', line 31)
+# makefile (from 'makefile', line 32)
 RE = '\033[0;34m'
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
@@ -112,7 +113,7 @@ RE = '\033[0;34m'
 VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/Taha/.vscode/extensions/ms-vscode-remote.remote-wsl-0.66.3
 # default
 MAKE_COMMAND := make
-# makefile (from 'makefile', line 30)
+# makefile (from 'makefile', line 31)
 NC = '\033[0m'
 # default
 .VARIABLES := 
@@ -120,7 +121,7 @@ NC = '\033[0m'
 *F = $(notdir $*)
 # makefile (from 'makefile', line 14)
 OS = $(shell uname -s)
-# makefile (from 'makefile', line 32)
+# makefile (from 'makefile', line 33)
 RED = '\033[0;31m'
 # makefile
 MAKEFLAGS = pqrR
@@ -168,14 +169,14 @@ WSL_DISTRO_NAME = Ubuntu-18.04
 # Directories
 
 # . (device 2064, inode 2238): 9 files, no impossibilities.
-# src (device 2064, inode 70387): 8 files, no impossibilities so far.
+# src (device 2064, inode 70387): 10 files, no impossibilities so far.
 
-# 17 files, no impossibilities in 2 directories.
+# 19 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
 obj/%.o: src/%.c
-#  recipe to execute (from 'makefile', line 46):
+#  recipe to execute (from 'makefile', line 47):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
 	@ echo ${RE}"Making the $(notdir $@)"${NC}
@@ -196,6 +197,12 @@ obj/linked_list.o:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+obj/get_time.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 all: philo
 #  Command line target.
 #  Implicit rule search has been done.
@@ -205,14 +212,14 @@ all: philo
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/7=0%
 
-philo: libft/library/libft.a obj/main.o obj/linked_list.o obj/ft_free.o obj/parse.o obj/init.o obj/destroy_mutex.o
+philo: libft/library/libft.a obj/main.o obj/linked_list.o obj/ft_free.o obj/parse.o obj/init.o obj/destroy_mutex.o obj/print_state.o obj/get_time.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-18 17:41:18.915257
+#  Last modified 2022-06-20 17:42:13.3189176
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/7=0%
-#  recipe to execute (from 'makefile', line 43):
+#  recipe to execute (from 'makefile', line 44):
 	@ $(CC) $(CFLAG) $(OBJ) $(LIBRARY) -o $(NAME)
 
 # Not a target:
@@ -224,7 +231,7 @@ obj/ft_free.o:
 obj/main.o: src/main.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  Last modified 2022-06-18 17:41:18.675257
+#  Last modified 2022-06-20 17:42:13.2289176
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
@@ -245,7 +252,7 @@ obj/main.o: src/main.c
 # ? := src/main.c
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=5/18=28%
-#  recipe to execute (from 'makefile', line 46):
+#  recipe to execute (from 'makefile', line 47):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
 	@ echo ${RE}"Making the $(notdir $@)"${NC}
@@ -253,7 +260,7 @@ obj/main.o: src/main.c
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 18:50:43.9855514
+#  Last modified 2022-06-20 17:45:18.3589176
 #  File has been updated.
 #  Successfully updated.
 
@@ -261,14 +268,14 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 59):
+#  recipe to execute (from 'makefile', line 60):
 	@ make fclean -C libft 
 	@ $(RM) $(NAME)
 
 # Not a target:
 src/main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-18 17:54:02.645257
+#  Last modified 2022-06-20 17:44:21.3489176
 #  File has been updated.
 #  Successfully updated.
 
@@ -278,12 +285,18 @@ src/main.c:
 #  Modification time never checked.
 #  File has not been updated.
 
- 
+# Not a target:
+obj/print_state.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 re: fclean all
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 63):
+#  recipe to execute (from 'makefile', line 64):
+ 
 	# ./main
 
 # Not a target:
@@ -296,7 +309,7 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 55):
+#  recipe to execute (from 'makefile', line 56):
 	@ make clean -C libft 
 	@ $(RM) $(OBJ)
 	
@@ -309,26 +322,26 @@ obj/init.o:
 
 libft/library/libft.a:
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-18 17:41:18.645257
+#  Last modified 2022-06-19 18:01:40.1068674
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'makefile', line 52):
+#  recipe to execute (from 'makefile', line 53):
 	@ make -C libft
 
 # files hash-table stats:
-# Load=16/1024=2%, Rehash=0, Collisions=0/43=0%
+# Load=18/1024=2%, Rehash=0, Collisions=0/47=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 34 / storage = 323 B / avg = 9 B
-# current buf: size = 8162 B / used = 323 B / count = 34 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 38 / storage = 381 B / avg = 10 B
+# current buf: size = 8162 B / used = 381 B / count = 38 / avg = 10 B
 
-# strcache performance: lookups = 55 / hit rate = 38%
+# strcache performance: lookups = 59 / hit rate = 35%
 # hash-table stats:
-# Load=34/8192=0%, Rehash=0, Collisions=2/55=4%
-# Finished Make data base on Sat Jun 18 21:23:26 2022
+# Load=38/8192=0%, Rehash=0, Collisions=2/59=3%
+# Finished Make data base on Mon Jun 20 17:45:23 2022
 
  

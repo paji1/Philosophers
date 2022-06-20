@@ -6,80 +6,85 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 09:17:26 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/18 23:06:48 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/20 18:02:49 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "../include/philo.h"
-
-void print_states(t_philo *philo, int state)
+void sleeping(t_philo *philo)
 {
-	printf("\n%ld ", philo->vars->current_time.tv_usec - philo->vars->eposh.tv_usec);
-	if (state == THINKING)
-		printf("philo %d is thinking " ,philo->id);
-	else if (state == SLEPPING)
-		printf("philo %d is SLEPPING " ,philo->id);
-	else if (state == EATING)
-		printf("philo %d is EATING " ,philo->id);
-	else if (state == TAKE_LEFT)
-		printf("philo %d take left fork ",philo->id);
-	else if (state == TAKE_RIGHT)
-		printf("philo %d take right fork ",philo->id);
+	if (philo->state == SLEPPING)
+	{
+		print_states(philo, SLEPPING);
+		usleep(philo->vars->table->time_to_sleep * 1000);
+		print_states(philo, THINKING);
+		philo->state = THINKING;
+	}
+}
+
+void thinking(t_philo *philo)
+{
+	static int i;
+	
+	if (philo->state == THINKING)
+	{
+		if (!i && philo->id % 2)
+			i = 1 , usleep(200);
+		pthread_mutex_lock(&philo->vars->fork[philo->id - 1]);
+		print_states(philo, TAKE_LEFT);
+		pthread_mutex_lock(&philo->vars->fork[(philo->id) % philo->vars->table->nb_philo]);
+		print_states(philo, TAKE_RIGHT);
+		philo->state = EATING;
+	}
+}
+
+void eating(t_philo *philo)
+{
+	if (philo->state == EATING)
+	{
+		print_states(philo, EATING);
+		// philo->vars->is_died = 1;
+		usleep(philo->vars->table->time_to_eat * 1000);
+		pthread_mutex_unlock(&philo->vars->fork[philo->id - 1]);
+		pthread_mutex_unlock(&philo->vars->fork[(philo->id) % philo->vars->table->nb_philo]);
+		philo->state = SLEPPING;
+	}
 }
 
 void	*philo_routine(void *var)
 {
 	t_philo *philo;
-	int n;
-	
-	
+
 	philo = (t_philo *)var;
-	n = philo->id -1;;
-	while (1)
+
+	while (!philo->vars->is_died)
 	{
-		if (philo->state == THINKING)
-		{
-		gettimeofday(&philo->vars->current_time, NULL);
-			print_states(philo, THINKING);
-			pthread_mutex_lock(&philo->vars->fork[n]);
-			print_states(philo, TAKE_LEFT);
-			pthread_mutex_lock(&philo->vars->fork[(n + 1) % philo->vars->table->nb_philo]);
-			print_states(philo, TAKE_RIGHT);
-		gettimeofday(&philo->vars->current_time, NULL);
-			philo->state = EATING;
-		}
-		if (philo->state == SLEPPING)
-		{
-		gettimeofday(&philo->vars->current_time, NULL);
-			print_states(philo, SLEPPING);
-			usleep(philo->vars->table->time_to_sleep * 1000);
-			philo->state = THINKING;
-		}
-		if (philo->state == EATING)
-		{
-		gettimeofday(&philo->vars->current_time, NULL);
-			print_states(philo, EATING);
-			usleep(philo->vars->table->time_to_eat * 1000);
-			pthread_mutex_unlock(&philo->vars->fork[n]);
-			pthread_mutex_unlock(&philo->vars->fork[(n + 1)%philo->vars->table->nb_philo]);
-			philo->state = SLEPPING;
-		}
+		thinking(philo);
+		sleeping(philo);
+		eating(philo);
 	}
 	return NULL;
 }
 
 int main(int argc, char **argv)
 {
-	t_vars vars;
+	t_vars *vars;
 
+	vars = malloc(sizeof(t_vars));
 	if (parse(argc, argv))
-		return (1);
-	if (init(&vars, argc, argv))
-		return (1);		
+		return (free(vars), 1);
+	if (init(vars, argc, argv))
+		return (free(vars), 1);
+	t_philo *philo = vars->table->head;
+	while (1)
+	{
+		if(vars->is_died)
+			return printf("hello\n") ,0;
+		philo = philo->next;
+	}
 	int i = -1;
-	while (++i < vars.table->nb_philo)
-		pthread_join(vars.threads[i], NULL);
-	free(vars.threads);
-	return (ft_free(&vars.table), 0);
+	while (++i < vars->table->nb_philo)
+		pthread_join(vars->threads[i], NULL);
+	return (free(vars->threads), free(vars), ft_free(&vars->table), 0);
 }

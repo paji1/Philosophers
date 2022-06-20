@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 10:10:37 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/18 23:07:57 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/20 17:40:41 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ static void init_times(t_vars *vars, int argc, char **argv)
 	vars->table->time_to_die = ft_atoi(argv[2]);
 	vars->table->time_to_eat = ft_atoi(argv[3]);
 	vars->table->time_to_sleep = ft_atoi(argv[4]);
+	vars->is_died = 0;
 	if (argc == 6)
 		vars->table->must_to_eat = ft_atoi(argv[5]);
 }
@@ -75,7 +76,7 @@ int	init(t_vars *vars, int argc, char **argv)
 		(ft_free(&vars->table), 1);
 	if (init_mutexes(vars))
 		(ft_free(&vars->table), 1);	
-		gettimeofday(&vars->eposh, NULL);
+	gettimeofday(&vars->eposh, NULL);
 	if (create_threads(vars, nb))
 		return (1);
 	return (0);

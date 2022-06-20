@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 13:03:17 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/18 23:02:14 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/20 17:33:55 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ typedef struct s_vars
 	pthread_mutex_t	*fork;
 	t_table			*table;
 	pthread_t		*threads;
+	int				is_died;
 }t_vars;
 #endif
 
