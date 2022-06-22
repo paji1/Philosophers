@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 13:26:37 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/20 17:34:04 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/22 20:42:23 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,10 @@ int	add_first(t_table *table, t_philo *new_philo)
 		return (0);
 	if (!table->head)
 	{
+		
 		table->head = new_philo;
+		table->head->next = new_philo;
+		table->head->prev = new_philo;
 		table->tail = new_philo;
 	}
 	else
