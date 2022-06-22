@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 18:46:00 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/18 17:28:02 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/22 17:03:31 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,20 @@ int init_mutexes(t_vars *vars)
 	int i;
 
 	i = -1;
-	vars->fork = malloc(sizeof(pthread_mutex_t) * vars->table->nb_philo);
+	vars->fork = malloc(sizeof(pthread_mutex_t) * (vars->table->nb_philo + 1));
 	if (!(vars->fork))
 		return (1);
-	while (++i < vars->table->nb_philo)
+	while (++i < vars->table->nb_philo + 1)
 		if (pthread_mutex_init(&vars->fork[i], NULL))
 			return (1);
 	return (0);
 }
 
-
-int destroy_mutexs(t_vars *vars)
+void	destroy_mutexs(t_vars *vars)
 {
 	int i;
 
 	i = -1;
-	while (++i < vars->table->nb_philo)
+	while (++i < vars->table->nb_philo + 1)
 		pthread_mutex_destroy(&vars->fork[i]);
 }

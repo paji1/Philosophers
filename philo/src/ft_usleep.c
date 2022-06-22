@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_time.c                                         :+:      :+:    :+:   */
+/*   ft_usleep.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/20 17:44:32 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/22 15:42:41 by tel-mouh         ###   ########.fr       */
+/*   Created: 2022/06/21 20:32:14 by tel-mouh          #+#    #+#             */
+/*   Updated: 2022/06/22 16:18:18 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
-long get_time(t_philo *philo)
-{
-	t_timeval	current_time;
-	long	eposh;
-	long	current; 
 
-	gettimeofday(&current_time, NULL);
-	current = current_time.tv_usec / 1000 + \
-		current_time.tv_sec * 1000;
-	eposh = philo->vars->eposh.tv_usec / 1000 + \
-		philo->vars->eposh.tv_sec * 1000;
+long get_times(t_philo *philo)
+{
+	t_timeval time;
+	long	current; 
+	long	eposh;
+
+	time.tv_usec = 0;
+	time.tv_sec = 0;
+	gettimeofday(&time, NULL);
+	current = time.tv_usec + time.tv_sec * 1000 * 1000;
+	eposh = philo->vars->eposh.tv_usec + philo->vars->eposh.tv_sec * 1000 * 1000;
 	return (current - eposh);
+}
+
+void ft_usleep(long time, t_philo *philo)
+{
+	long init;
+
+	init = get_times(philo);
+	while((get_times(philo)) - init < time)
+		usleep(50);
 }

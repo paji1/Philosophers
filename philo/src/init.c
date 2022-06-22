@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 10:10:37 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/20 17:40:41 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/22 17:39:39 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,29 +32,13 @@ static int init_philo_to_table(t_vars *vars, int nb)
 	return (0);
 }
 
-static int	create_threads(t_vars *vars, int nb)
-{
-	t_philo	*philo;
-	int	 	j;
-
-	j = -1;
-	philo = vars->table->head;
-	while (++j < nb)
-	{
-		philo->vars = vars;
-		if (pthread_create(&vars->threads[j], NULL, philo_routine, philo))
-			return (ft_free(&vars->table), free(vars->threads), 1);
-		philo = philo->next;
-	}
-	return 0;
-}
-
 static void init_times(t_vars *vars, int argc, char **argv)
 {
 	vars->table->time_to_die = ft_atoi(argv[2]);
 	vars->table->time_to_eat = ft_atoi(argv[3]);
 	vars->table->time_to_sleep = ft_atoi(argv[4]);
 	vars->is_died = 0;
+	vars->data = (void *)malloc(8);
 	if (argc == 6)
 		vars->table->must_to_eat = ft_atoi(argv[5]);
 }

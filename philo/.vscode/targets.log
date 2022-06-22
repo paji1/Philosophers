@@ -5,11 +5,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Mon Jun 20 17:45:23 2022
+# Make data base, printed on Wed Jun 22 15:46:36 2022
 
 # Variables
- 
 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
@@ -22,7 +22,7 @@ WSLENV = VSCODE_WSL_EXT_LOCATION/up
 # makefile (from 'makefile', line 22)
 OBJ = $(addprefix obj/, $(SRC:.c=.o))
 # makefile (from 'makefile', line 20)
-SRC = main.c linked_list.c ft_free.c parse.c init.c destroy_mutex.c print_state.c get_time.c
+SRC = main.c linked_list.c ft_free.c parse.c init.c destroy_mutex.c print_state.c get_time.c behaviors.c check_die.c ft_usleep.c threads.c forks.c
 # environment
 VSCODE_LOG_NATIVE = false
 # makefile (from 'makefile', line 26)
@@ -70,7 +70,7 @@ VSCODE_PIPE_LOGGING = true
 # environment
 PWD = /home/taha/desktop/Philosophers/philo
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-d36160a8-52f5-4fcf-a89e-82a902271a15.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-b4abf30f-67a2-4734-85bd-74a12a6d8617.sock
 # environment
 WSL_INTEROP = /run/WSL/11_interop
 # environment
@@ -169,9 +169,9 @@ WSL_DISTRO_NAME = Ubuntu-18.04
 # Directories
 
 # . (device 2064, inode 2238): 9 files, no impossibilities.
-# src (device 2064, inode 70387): 10 files, no impossibilities so far.
+# src (device 2064, inode 70387): 15 files, no impossibilities so far.
 
-# 19 files, no impossibilities in 2 directories.
+# 24 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -185,23 +185,38 @@ obj/%.o: src/%.c
 
 # Files
 
-# Not a target:
-obj/destroy_mutex.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+obj/destroy_mutex.o: src/destroy_mutex.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'destroy_mutex'
+#  Last modified 2022-06-21 21:41:18.1579155
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'makefile', line 47):
+	@ mkdir -p obj
+	@ $(CC) $(CFLAG) -c $< -o $@
+	@ echo ${RE}"Making the $(notdir $@)"${NC}
 
-# Not a target:
-obj/linked_list.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+obj/linked_list.o: src/linked_list.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'linked_list'
+#  Last modified 2022-06-21 21:41:17.9879155
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'makefile', line 47):
+	@ mkdir -p obj
+	@ $(CC) $(CFLAG) -c $< -o $@
+	@ echo ${RE}"Making the $(notdir $@)"${NC}
 
-# Not a target:
-obj/get_time.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+obj/get_time.o: src/get_time.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'get_time'
+#  Last modified 2022-06-22 15:44:53.36188
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'makefile', line 47):
+	@ mkdir -p obj
+	@ $(CC) $(CFLAG) -c $< -o $@
+	@ echo ${RE}"Making the $(notdir $@)"${NC}
 
 all: philo
 #  Command line target.
@@ -212,9 +227,9 @@ all: philo
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/7=0%
 
-philo: libft/library/libft.a obj/main.o obj/linked_list.o obj/ft_free.o obj/parse.o obj/init.o obj/destroy_mutex.o obj/print_state.o obj/get_time.o
+philo: libft/library/libft.a obj/main.o obj/linked_list.o obj/ft_free.o obj/parse.o obj/init.o obj/destroy_mutex.o obj/print_state.o obj/get_time.o obj/behaviors.o obj/check_die.o obj/ft_usleep.o obj/threads.o obj/forks.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-20 17:42:13.3189176
+#  Last modified 2022-06-22 15:44:53.57188
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -222,47 +237,69 @@ philo: libft/library/libft.a obj/main.o obj/linked_list.o obj/ft_free.o obj/pars
 #  recipe to execute (from 'makefile', line 44):
 	@ $(CC) $(CFLAG) $(OBJ) $(LIBRARY) -o $(NAME)
 
-# Not a target:
-obj/ft_free.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+obj/ft_free.o: src/ft_free.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'ft_free'
+#  Last modified 2022-06-21 21:41:18.0179155
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'makefile', line 47):
+	@ mkdir -p obj
+	@ $(CC) $(CFLAG) -c $< -o $@
+	@ echo ${RE}"Making the $(notdir $@)"${NC}
 
 obj/main.o: src/main.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  Last modified 2022-06-20 17:42:13.2289176
+#  Last modified 2022-06-22 15:44:53.28188
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := obj/main.o
-# automatic
-# % := 
-# automatic
-# * := main
-# automatic
-# + := src/main.c
-# automatic
-# | := 
-# automatic
-# < := src/main.c
-# automatic
-# ^ := src/main.c
-# automatic
-# ? := src/main.c
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=5/18=28%
+#  Successfully updated.
 #  recipe to execute (from 'makefile', line 47):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
 	@ echo ${RE}"Making the $(notdir $@)"${NC}
 
 # Not a target:
-makefile:
+src/destroy_mutex.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-20 17:45:18.3589176
+#  Last modified 2022-06-21 20:03:10.3451538
 #  File has been updated.
 #  Successfully updated.
+
+# Not a target:
+src/linked_list.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-20 17:34:04.2689176
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-22 15:46:33.63188
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/get_time.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-22 15:42:41.82188
+ 
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/ft_free.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-21 20:31:27.9579155
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+obj/check_die.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 fclean: clean
 #  Implicit rule search has not been done.
@@ -275,9 +312,15 @@ fclean: clean
 # Not a target:
 src/main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-20 17:44:21.3489176
+#  Last modified 2022-06-21 21:46:19.4079155
 #  File has been updated.
 #  Successfully updated.
+
+# Not a target:
+obj/ft_usleep.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -285,25 +328,63 @@ src/main.c:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-obj/print_state.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+obj/behaviors.o: src/behaviors.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'behaviors'
+#  Last modified 2022-06-22 15:44:53.40188
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := obj/behaviors.o
+# automatic
+# % := 
+# automatic
+# * := behaviors
+# automatic
+# + := src/behaviors.c
+# automatic
+# | := 
+# automatic
+# < := src/behaviors.c
+# automatic
+# ^ := src/behaviors.c
+# automatic
+# ? := src/behaviors.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=5/18=28%
+#  recipe to execute (from 'makefile', line 47):
+	@ mkdir -p obj
+	@ $(CC) $(CFLAG) -c $< -o $@
+	@ echo ${RE}"Making the $(notdir $@)"${NC}
+
+obj/print_state.o: src/print_state.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'print_state'
+#  Last modified 2022-06-22 15:44:53.33188
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'makefile', line 47):
+	@ mkdir -p obj
+	@ $(CC) $(CFLAG) -c $< -o $@
+	@ echo ${RE}"Making the $(notdir $@)"${NC}
 
 re: fclean all
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 64):
- 
 	# ./main
 
-# Not a target:
-obj/parse.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+obj/parse.o: src/parse.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'parse'
+#  Last modified 2022-06-21 21:41:18.0779155
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'makefile', line 47):
+	@ mkdir -p obj
+	@ $(CC) $(CFLAG) -c $< -o $@
+	@ echo ${RE}"Making the $(notdir $@)"${NC}
 
 clean:
 #  Implicit rule search has not been done.
@@ -314,34 +395,79 @@ clean:
 	@ $(RM) $(OBJ)
 	
 
+obj/init.o: src/init.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'init'
+#  Last modified 2022-06-21 21:41:18.1279155
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'makefile', line 47):
+	@ mkdir -p obj
+	@ $(CC) $(CFLAG) -c $< -o $@
+	@ echo ${RE}"Making the $(notdir $@)"${NC}
+
 # Not a target:
-obj/init.o:
+obj/threads.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/forks.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 libft/library/libft.a:
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-19 18:01:40.1068674
+#  Last modified 2022-06-21 21:41:17.9179155
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 53):
 	@ make -C libft
 
+# Not a target:
+src/behaviors.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-22 15:46:00.94188
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/print_state.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-22 15:44:52.48188
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/parse.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-20 17:30:10.6789176
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/init.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-20 17:40:41.8489176
+#  File has been updated.
+#  Successfully updated.
+
 # files hash-table stats:
-# Load=18/1024=2%, Rehash=0, Collisions=0/47=0%
+# Load=31/1024=3%, Rehash=0, Collisions=0/89=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 38 / storage = 381 B / avg = 10 B
-# current buf: size = 8162 B / used = 381 B / count = 38 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 64 / storage = 709 B / avg = 11 B
+# current buf: size = 8162 B / used = 709 B / count = 64 / avg = 11 B
 
-# strcache performance: lookups = 59 / hit rate = 35%
+# strcache performance: lookups = 93 / hit rate = 31%
 # hash-table stats:
-# Load=38/8192=0%, Rehash=0, Collisions=2/59=3%
-# Finished Make data base on Mon Jun 20 17:45:23 2022
+# Load=64/8192=1%, Rehash=0, Collisions=2/93=2%
+# Finished Make data base on Wed Jun 22 15:46:36 2022
 
  
