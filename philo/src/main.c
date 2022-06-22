@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 09:17:26 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/22 20:40:54 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/22 21:59:06 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	check_all_philo(t_vars *vars)
 		}
 		philo = philo->next;
 	}
+	return (0);
 }
 
 int main(int argc, char **argv)
@@ -46,7 +47,8 @@ int main(int argc, char **argv)
 		return (free(vars), 1);
 	if (init(vars, argc, argv))
 		return (free(vars), 1);
-	check_all_philo(vars);
+	if (check_all_philo(vars))
+		return (free_all(vars), 0);
 	join_threads(vars);
 	if(vars->is_died)
 		return (free_all(vars), 0);

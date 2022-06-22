@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 20:32:14 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/22 16:18:18 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/22 22:00:32 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void ft_usleep(long time, t_philo *philo)
 	long init;
 
 	init = get_times(philo);
+	usleep(time * 0.9);
 	while((get_times(philo)) - init < time)
 		usleep(50);
 }

@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 13:26:37 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/22 20:42:23 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/22 21:44:14 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	*init_table(t_table **table, int nb)
 	(*table)->head = NULL;
 	(*table)->tail = NULL;
 	(*table)->nb_philo = nb;
+	return ((void *)*table);
 }
 
 int	add_first(t_table *table, t_philo *new_philo)

@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 09:29:11 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/20 17:30:10 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/22 21:46:44 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ static int	check_all_arguments(int argc, char **argv)
 		return (print_error\
 			("Fourth Argument must be all digit (time to sleep)\n"), 1);
 	if (argc == 6 && ft_is_str_nb(argv[5]))
+		return (print_error\
+			("Fourth Argument must be all digit (time to sleep)\n"), 1);
 	return (0);
 }
 static int check_if_inrange(int argc, char **argv)
@@ -73,4 +75,5 @@ int	parse(int argc, char **argv)
 		return (1);
 	if (check_if_inrange(argc, argv))
 		return (1);
+	return (0);
 }

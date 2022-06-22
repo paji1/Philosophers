@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 10:10:37 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/22 17:39:39 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/22 21:59:24 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ int	init(t_vars *vars, int argc, char **argv)
 	if (init_philo_to_table(vars, nb))
 		return (1);
 	if (create_table_ofthreads(vars, argc))
-		(ft_free(&vars->table), 1);
+		return (ft_free(&vars->table), 1);
 	if (init_mutexes(vars))
-		(ft_free(&vars->table), 1);	
+		return (ft_free(&vars->table), 1);	
 	gettimeofday(&vars->eposh, NULL);
 	if (create_threads(vars, nb))
 		return (1);
