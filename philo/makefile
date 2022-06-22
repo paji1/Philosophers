@@ -6,7 +6,7 @@
 #    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 04:31:34 by tel-mouh          #+#    #+#              #
-#    Updated: 2022/06/22 21:37:00 by tel-mouh         ###   ########.fr        #
+#    Updated: 2022/06/23 00:25:32 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CC = gcc -g
 SRC = main.c linked_list.c ft_free.c parse.c init.c destroy_mutex.c\
 	print_state.c get_time.c behaviors.c check_die.c ft_usleep.c threads.c forks.c
 OBJ = $(addprefix obj/, $(SRC:.c=.o))
-CFLAG = 
+CFLAG = -pthread
 # ################LIBRARY############################
 
 LIBRARY = libft/library/libft.a

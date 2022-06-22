@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 10:10:37 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/22 21:59:24 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/23 00:35:36 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void init_times(t_vars *vars, int argc, char **argv)
 	vars->table->time_to_eat = ft_atoi(argv[3]);
 	vars->table->time_to_sleep = ft_atoi(argv[4]);
 	vars->is_died = 0;
-	vars->data = (void *)malloc(8);
+	vars->data = (void *)"";
 	if (argc == 6)
 		vars->table->must_to_eat = ft_atoi(argv[5]);
 }

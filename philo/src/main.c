@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 09:17:26 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/22 21:59:06 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/23 00:55:45 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,10 @@ int	check_all_philo(t_vars *vars)
 	philo = vars->table->head;
 	while (philo)
 	{
-		// printf("%d\n",philo->next->id);
 		if (get_time(philo) - philo->last_eat >= philo->vars->table->time_to_die)
 		{
 			philo->vars->is_died = 1;
-			return (printf("\n %ld %d died\n", get_time(philo), philo->id) ,1);
+			return (printf("%ld %d died\n", get_time(philo), philo->id) ,1);
 		}
 		philo = philo->next;
 	}
@@ -48,7 +47,7 @@ int main(int argc, char **argv)
 	if (init(vars, argc, argv))
 		return (free(vars), 1);
 	if (check_all_philo(vars))
-		return (free_all(vars), 0);
+		return (join_threads(vars), free_all(vars), 0);
 	join_threads(vars);
 	if(vars->is_died)
 		return (free_all(vars), 0);
