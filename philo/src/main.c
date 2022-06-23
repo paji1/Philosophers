@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 09:17:26 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/23 02:02:00 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/23 14:55:30 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ int	check_all_philo(t_vars *vars)
 		if (get_time(philo) - philo->last_eat >= philo->vars->table->time_to_die)
 		{
 			philo->vars->is_died = 1;
-			join_threads(vars);
-			return (printf("%ld %d died\n", get_time(philo), philo->id) ,1);
+			printf("%ld %d died\n", get_time(philo), philo->id);
+			return (join_threads(vars),1);
 		}
 		philo = philo->next;
 	}

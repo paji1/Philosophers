@@ -6,7 +6,7 @@
 #    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 04:31:34 by tel-mouh          #+#    #+#              #
-#    Updated: 2022/06/23 02:18:44 by tel-mouh         ###   ########.fr        #
+#    Updated: 2022/06/23 14:43:48 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ CFLAG = -pthread -Wall -Werror -Wextra
 # ################LIBRARY############################
 
 LIBRARY = libft/library/libft.a
+
 
 # ################COLOR##############################
 
@@ -43,7 +44,7 @@ all : $(NAME)
 $(NAME): $(LIBRARY) $(OBJ) 
 	@ $(CC) $(CFLAG) $(OBJ) $(LIBRARY) -o $(NAME)
 
-obj/%.o : src/%.c
+obj/%.o : src/%.c 
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
 	@ echo ${RE}"Making the $(notdir $@)"${NC}
