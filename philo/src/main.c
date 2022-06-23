@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 09:17:26 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/23 16:29:14 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/23 16:42:17 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,3 +59,4 @@ int main(int argc, char **argv)
 		return (free_all(vars), 0);
 	return (free(vars->threads), free(vars), ft_free(&vars->table), 0);
 }
+
