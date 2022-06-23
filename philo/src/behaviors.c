@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 20:19:31 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/22 17:02:27 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/23 02:15:30 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int sleeping(t_philo *philo)
 			return (1);
 		ft_usleep(philo->vars->table->time_to_sleep * 1000, philo);
 		philo->state = THINKING;
-		// return (1);
 	}
 	return 0;
 }
@@ -43,6 +42,15 @@ int eating(t_philo *philo)
 		if (print_states(philo, EATING))
 			return (1);
 		ft_usleep(philo->vars->table->time_to_eat * 1000, philo);
+		pthread_mutex_lock(&philo->vars->fork[philo->vars->table->nb_philo]);
+		if (philo->vars->table->must_to_eat && philo->vars->n_num == philo->vars->table->nb_philo * philo->vars->table->must_to_eat)
+		{
+			philo->vars->n_num += 1;
+			return (1);
+		}
+		else
+			philo->vars->n_num += 1;
+		pthread_mutex_unlock(&philo->vars->fork[philo->vars->table->nb_philo]);
 	}
 	return 0;
 }

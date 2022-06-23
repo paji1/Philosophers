@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 21:43:29 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/23 00:36:06 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/23 01:57:35 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,16 @@ int join_threads(t_vars *vars)
 	i = -1;
 	while (++i < vars->table->nb_philo)
 		pthread_join(vars->threads[i], &vars->data);
+	return (0);
+}
+
+int detach_threads(t_vars *vars)
+{
+	int i;
+	
+	i = -1;
+	while (++i < vars->table->nb_philo)
+		pthread_detach(vars->threads[i]);
 	return (0);
 }
 

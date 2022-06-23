@@ -1,48 +1,32 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory '/home/taha/desktop/Philosophers/philo'
-make -C libft
 mkdir -p obj
-gcc -g -pthread -c src/main.c -o obj/main.o
-echo '\033[0;34m'"Making the main.o"'\033[0m'
-mkdir -p obj
-gcc -g -pthread -c src/linked_list.c -o obj/linked_list.o
-echo '\033[0;34m'"Making the linked_list.o"'\033[0m'
-mkdir -p obj
-gcc -g -pthread -c src/ft_free.c -o obj/ft_free.o
-echo '\033[0;34m'"Making the ft_free.o"'\033[0m'
-mkdir -p obj
-gcc -g -pthread -c src/parse.c -o obj/parse.o
-echo '\033[0;34m'"Making the parse.o"'\033[0m'
- 
-mkdir -p obj
-gcc -g -pthread -c src/init.c -o obj/init.o
+gcc -g -pthread -Wall -Werror -Wextra -c src/init.c -o obj/init.o
 echo '\033[0;34m'"Making the init.o"'\033[0m'
 mkdir -p obj
-gcc -g -pthread -c src/destroy_mutex.c -o obj/destroy_mutex.o
+gcc -g -pthread -Wall -Werror -Wextra -c src/destroy_mutex.c -o obj/destroy_mutex.o
 echo '\033[0;34m'"Making the destroy_mutex.o"'\033[0m'
- 
 mkdir -p obj
-gcc -g -pthread -c src/print_state.c -o obj/print_state.o
+gcc -g -pthread -Wall -Werror -Wextra -c src/print_state.c -o obj/print_state.o
 echo '\033[0;34m'"Making the print_state.o"'\033[0m'
 mkdir -p obj
-gcc -g -pthread -c src/get_time.c -o obj/get_time.o
+gcc -g -pthread -Wall -Werror -Wextra -c src/get_time.c -o obj/get_time.o
 echo '\033[0;34m'"Making the get_time.o"'\033[0m'
 mkdir -p obj
-gcc -g -pthread -c src/behaviors.c -o obj/behaviors.o
+gcc -g -pthread -Wall -Werror -Wextra -c src/behaviors.c -o obj/behaviors.o
 echo '\033[0;34m'"Making the behaviors.o"'\033[0m'
 mkdir -p obj
-gcc -g -pthread -c src/check_die.c -o obj/check_die.o
+gcc -g -pthread -Wall -Werror -Wextra -c src/check_die.c -o obj/check_die.o
 echo '\033[0;34m'"Making the check_die.o"'\033[0m'
 mkdir -p obj
-gcc -g -pthread -c src/ft_usleep.c -o obj/ft_usleep.o
+gcc -g -pthread -Wall -Werror -Wextra -c src/ft_usleep.c -o obj/ft_usleep.o
 echo '\033[0;34m'"Making the ft_usleep.o"'\033[0m'
- 
 mkdir -p obj
-gcc -g -pthread -c src/threads.c -o obj/threads.o
+gcc -g -pthread -Wall -Werror -Wextra -c src/threads.c -o obj/threads.o
 echo '\033[0;34m'"Making the threads.o"'\033[0m'
 mkdir -p obj
-gcc -g -pthread -c src/forks.c -o obj/forks.o
+gcc -g -pthread -Wall -Werror -Wextra -c src/forks.c -o obj/forks.o
 echo '\033[0;34m'"Making the forks.o"'\033[0m'
-gcc -g -pthread obj/main.o obj/linked_list.o obj/ft_free.o obj/parse.o obj/init.o obj/destroy_mutex.o obj/print_state.o obj/get_time.o obj/behaviors.o obj/check_die.o obj/ft_usleep.o obj/threads.o obj/forks.o libft/library/libft.a -o ./philo
+gcc -g -pthread -Wall -Werror -Wextra obj/main.o obj/linked_list.o obj/ft_free.o obj/parse.o obj/init.o obj/destroy_mutex.o obj/print_state.o obj/get_time.o obj/behaviors.o obj/check_die.o obj/ft_usleep.o obj/threads.o obj/forks.o libft/library/libft.a -o ./philo
 make: Leaving directory '/home/taha/desktop/Philosophers/philo'
  

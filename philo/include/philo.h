@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 09:10:13 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/22 18:26:47 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/23 01:58:56 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,3 +45,4 @@ int		join_threads(t_vars *vars);
 long	get_times(t_philo *philo);
 int		take_forks(t_philo *philo, int *i);
 int		realese_forks(t_philo *philo);
+int		detach_threads(t_vars *vars);

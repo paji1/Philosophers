@@ -6,14 +6,13 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 10:10:37 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/23 00:35:36 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/23 02:19:54 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
-
-static int create_table_ofthreads(t_vars *vars, int argc)
+static int create_table_ofthreads(t_vars *vars)
 {
 	vars->threads = malloc(vars->table->nb_philo * sizeof(pthread_t));
 	if (!vars->threads)
@@ -48,7 +47,7 @@ int	init(t_vars *vars, int argc, char **argv)
 	int	nb;
 
 	nb = atoi(argv[1]);
-	if (!nb)
+	if (!nb || (argc == 6 && !atoi(argv[5])))
 		return (1);
 	vars->table = NULL;
 	if (!init_table(&vars->table, nb))
@@ -56,7 +55,7 @@ int	init(t_vars *vars, int argc, char **argv)
 	init_times(vars, argc, argv);
 	if (init_philo_to_table(vars, nb))
 		return (1);
-	if (create_table_ofthreads(vars, argc))
+	if (create_table_ofthreads(vars))
 		return (ft_free(&vars->table), 1);
 	if (init_mutexes(vars))
 		return (ft_free(&vars->table), 1);	
