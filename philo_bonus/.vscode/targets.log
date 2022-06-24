@@ -8,8 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Fri Jun 24 23:04:13 2022
- 
+# Make data base, printed on Fri Jun 24 23:27:52 2022
 
 # Variables
 
@@ -18,6 +17,7 @@ VSCODE_GIT_ASKPASS_MAIN = /Applications/Visual Studio Code.app/Contents/Resource
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
+ 
 ?F = $(notdir $?)
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
@@ -45,11 +45,11 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 _ = /usr/bin/make
 # environment
 CFLAGS = -Wall -Wextra -Werror -g
-# makefile (from `makefile', line 53)
+# makefile (from `makefile', line 54)
 o := 1
-# makefile (from `makefile', line 52)
+# makefile (from `makefile', line 53)
 r :=       15
-# makefile (from `makefile', line 51)
+# makefile (from `makefile', line 52)
 x = -1
 # makefile (from `makefile', line 1)
 MAKEFILE_LIST :=  makefile
@@ -57,9 +57,9 @@ MAKEFILE_LIST :=  makefile
 LESS_TERMCAP_se = [0m
 # environment
 VSCODE_VERBOSE_LOGGING = true
-# makefile (from `makefile', line 45)
+# makefile (from `makefile', line 46)
 CODE_RESTORE_CURSOR = '\033[u'
-# makefile (from `makefile', line 44)
+# makefile (from `makefile', line 45)
 CODE_SAVE_CURSOR = '\033[s'
 # environment
 VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cc6c00331l/T/vscode-ipc-969bb9c1-14e5-4621-b05d-6e048b76d207.sock
@@ -93,7 +93,7 @@ VSCODE_PIPE_LOGGING = true
 PWD = /Users/tel-mouh/Desktop/Philosophers/philo_bonus
 # environment
 BAT_THEME = ansi
-# makefile (from `makefile', line 43)
+# makefile (from `makefile', line 44)
 lines = $(shell tput lines)
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
@@ -133,8 +133,8 @@ COLORTERM = truecolor
 MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
-# makefile (from `makefile', line 47)
-PATH := /Users/tel-mouh/goinfre/homebrew/bin:/Users/tel-mouh/goinfre/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
+# environment
+PATH = /Users/tel-mouh/goinfre/homebrew/bin:/Users/tel-mouh/goinfre/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # environment
 SHLVL = 3
 # environment
@@ -147,7 +147,7 @@ MAKE_VERSION := 3.81
 USER = tel-mouh
 # makefile
 .DEFAULT_GOAL := all
-# makefile (from `makefile', line 50)
+# makefile (from `makefile', line 51)
 NAME = ./philo_bonus
 # makefile (from `makefile', line 40)
 RE = '\033[0;34m'
@@ -205,7 +205,7 @@ MAKEFILES :=
 HOMEBREW_NO_AUTO_UPDATE = 1
 # automatic
 <F = $(notdir $<)
-# makefile (from `makefile', line 46)
+# makefile (from `makefile', line 47)
 CODE_CURSOR_IN_SCROLL_AREA = "\033[1A"
 # environment
 PAGER = less
@@ -230,7 +230,7 @@ TERM = xterm-256color
 # environment
 VSCODE_PID = 3006
 # variable set hash-table stats:
-# Load=108/1024=11%, Rehash=0, Collisions=10/143=7%
+# Load=108/1024=11%, Rehash=0, Collisions=8/141=6%
 
 # Pattern-specific Variable Values
 
@@ -238,20 +238,20 @@ VSCODE_PID = 3006
 
 # Directories
 
-# . (device 16777225, inode 94500): 8 files, no impossibilities.
-# src/utils (device 16777225, inode 94549): 7 files, no impossibilities so far.
-# src (device 16777225, inode 94535): 15 files, no impossibilities so far.
+# . (device 16777225, inode 99132): 8 files, no impossibilities.
+# src/utils (device 16777225, inode 99180): 7 files, no impossibilities so far.
+# src (device 16777225, inode 99166): 15 files, no impossibilities so far.
 
 # 30 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
 obj/%.o: src/%.c
-#  commands to execute (from `makefile', line 66):
-	@tput civis
-	$(eval x=$(x)+1)
+#  commands to execute (from `makefile', line 67):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
+	@tput civis
+	$(eval x=$(x)+1)
 	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
@@ -272,7 +272,7 @@ obj/%.o: src/%.c
 # Not a target:
 src/forks.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-24 22:39:42
+#  Last modified 2022-06-24 23:27:25
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -281,16 +281,16 @@ src/forks.c:
 obj/destroy_mutex.o: src/destroy_mutex.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `destroy_mutex'
-#  Last modified 2022-06-24 23:04:08
+#  Last modified 2022-06-24 23:27:36
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `makefile', line 66):
-	@tput civis
-	$(eval x=$(x)+1)
+#  commands to execute (from `makefile', line 67):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
+	@tput civis
+	$(eval x=$(x)+1)
 	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
@@ -307,17 +307,17 @@ obj/destroy_mutex.o: src/destroy_mutex.c
 obj/linked_list.o: src/linked_list.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `linked_list'
-#  Last modified 2022-06-24 23:04:08
- 
+#  Last modified 2022-06-24 23:27:35
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `makefile', line 66):
-	@tput civis
-	$(eval x=$(x)+1)
+#  commands to execute (from `makefile', line 67):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
+	@tput civis
+	$(eval x=$(x)+1)
+ 
 	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
@@ -334,16 +334,16 @@ obj/linked_list.o: src/linked_list.c
 obj/get_time.o: src/get_time.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `get_time'
-#  Last modified 2022-06-24 23:04:09
+#  Last modified 2022-06-24 23:27:36
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `makefile', line 66):
-	@tput civis
-	$(eval x=$(x)+1)
+#  commands to execute (from `makefile', line 67):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
+	@tput civis
+	$(eval x=$(x)+1)
 	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
@@ -369,16 +369,16 @@ all: philo_bonus
 obj/ft_free.o: src/ft_free.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `ft_free'
-#  Last modified 2022-06-24 23:04:08
+#  Last modified 2022-06-24 23:27:35
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `makefile', line 66):
-	@tput civis
-	$(eval x=$(x)+1)
+#  commands to execute (from `makefile', line 67):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
+	@tput civis
+	$(eval x=$(x)+1)
 	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
@@ -395,16 +395,16 @@ obj/ft_free.o: src/ft_free.c
 obj/utils/ft_strcmp.o: src/utils/ft_strcmp.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `utils/ft_strcmp'
-#  Last modified 2022-06-24 23:04:09
+#  Last modified 2022-06-24 23:27:37
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `makefile', line 66):
-	@tput civis
-	$(eval x=$(x)+1)
+#  commands to execute (from `makefile', line 67):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
+	@tput civis
+	$(eval x=$(x)+1)
 	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
@@ -421,16 +421,16 @@ obj/utils/ft_strcmp.o: src/utils/ft_strcmp.c
 obj/main.o: src/main.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `main'
-#  Last modified 2022-06-24 23:04:08
+#  Last modified 2022-06-24 23:27:35
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `makefile', line 66):
-	@tput civis
-	$(eval x=$(x)+1)
+#  commands to execute (from `makefile', line 67):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
+	@tput civis
+	$(eval x=$(x)+1)
 	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
@@ -453,7 +453,7 @@ obj/main.o: src/main.c
 # Not a target:
 src/destroy_mutex.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-24 22:39:42
+#  Last modified 2022-06-24 23:27:25
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -462,16 +462,16 @@ src/destroy_mutex.c:
 obj/utils/ft_putstr_fd.o: src/utils/ft_putstr_fd.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `utils/ft_putstr_fd'
-#  Last modified 2022-06-24 23:04:09
+#  Last modified 2022-06-24 23:27:37
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `makefile', line 66):
-	@tput civis
-	$(eval x=$(x)+1)
+#  commands to execute (from `makefile', line 67):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
+	@tput civis
+	$(eval x=$(x)+1)
 	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
@@ -488,7 +488,7 @@ obj/utils/ft_putstr_fd.o: src/utils/ft_putstr_fd.c
 # Not a target:
 src/linked_list.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-24 22:39:42
+#  Last modified 2022-06-24 23:27:25
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -497,7 +497,7 @@ src/linked_list.c:
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-24 23:01:54
+#  Last modified 2022-06-24 23:27:25
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -506,7 +506,7 @@ makefile:
 # Not a target:
 src/get_time.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-24 22:39:42
+#  Last modified 2022-06-24 23:27:25
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -515,7 +515,7 @@ src/get_time.c:
 # Not a target:
 src/ft_free.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-24 22:39:42
+#  Last modified 2022-06-24 23:27:25
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -524,16 +524,16 @@ src/ft_free.c:
 obj/utils/ft_atoi.o: src/utils/ft_atoi.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `utils/ft_atoi'
-#  Last modified 2022-06-24 23:04:10
+#  Last modified 2022-06-24 23:27:37
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `makefile', line 66):
-	@tput civis
-	$(eval x=$(x)+1)
+#  commands to execute (from `makefile', line 67):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
+	@tput civis
+	$(eval x=$(x)+1)
 	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
@@ -550,7 +550,7 @@ obj/utils/ft_atoi.o: src/utils/ft_atoi.c
 # Not a target:
 src/utils/ft_strcmp.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-24 22:39:42
+#  Last modified 2022-06-24 23:27:25
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -559,16 +559,16 @@ src/utils/ft_strcmp.c:
 obj/check_die.o: src/check_die.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `check_die'
-#  Last modified 2022-06-24 23:04:09
+#  Last modified 2022-06-24 23:27:36
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `makefile', line 66):
-	@tput civis
-	$(eval x=$(x)+1)
+#  commands to execute (from `makefile', line 67):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
+	@tput civis
+	$(eval x=$(x)+1)
 	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
@@ -586,14 +586,14 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `makefile', line 90):
+#  commands to execute (from `makefile', line 89):
 	@ $(RM) $(NAME)
 	
 
 # Not a target:
 src/main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-24 22:39:42
+#  Last modified 2022-06-24 23:27:25
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -602,17 +602,17 @@ src/main.c:
 obj/utils/ft_itoa.o: src/utils/ft_itoa.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `utils/ft_itoa'
-#  Last modified 2022-06-24 23:04:10
- 
+#  Last modified 2022-06-24 23:27:37
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `makefile', line 66):
-	@tput civis
-	$(eval x=$(x)+1)
+#  commands to execute (from `makefile', line 67):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
+	@tput civis
+	$(eval x=$(x)+1)
+ 
 	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
@@ -629,7 +629,7 @@ obj/utils/ft_itoa.o: src/utils/ft_itoa.c
 # Not a target:
 src/utils/ft_putstr_fd.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-24 22:39:42
+#  Last modified 2022-06-24 23:27:25
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -638,16 +638,16 @@ src/utils/ft_putstr_fd.c:
 obj/ft_usleep.o: src/ft_usleep.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `ft_usleep'
-#  Last modified 2022-06-24 23:04:09
+#  Last modified 2022-06-24 23:27:36
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `makefile', line 66):
-	@tput civis
-	$(eval x=$(x)+1)
+#  commands to execute (from `makefile', line 67):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
+	@tput civis
+	$(eval x=$(x)+1)
 	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
@@ -670,16 +670,16 @@ obj/ft_usleep.o: src/ft_usleep.c
 obj/utils/ft_isdigit.o: src/utils/ft_isdigit.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `utils/ft_isdigit'
-#  Last modified 2022-06-24 23:04:09
+#  Last modified 2022-06-24 23:27:37
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `makefile', line 66):
-	@tput civis
-	$(eval x=$(x)+1)
+#  commands to execute (from `makefile', line 67):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
+	@tput civis
+	$(eval x=$(x)+1)
 	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
@@ -696,16 +696,16 @@ obj/utils/ft_isdigit.o: src/utils/ft_isdigit.c
 obj/behaviors.o: src/behaviors.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `behaviors'
-#  Last modified 2022-06-24 23:04:09
+#  Last modified 2022-06-24 23:27:36
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `makefile', line 66):
-	@tput civis
-	$(eval x=$(x)+1)
+#  commands to execute (from `makefile', line 67):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
+	@tput civis
+	$(eval x=$(x)+1)
 	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
@@ -722,16 +722,16 @@ obj/behaviors.o: src/behaviors.c
 obj/print_state.o: src/print_state.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `print_state'
-#  Last modified 2022-06-24 23:04:08
+#  Last modified 2022-06-24 23:27:36
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `makefile', line 66):
-	@tput civis
-	$(eval x=$(x)+1)
+#  commands to execute (from `makefile', line 67):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
+	@tput civis
+	$(eval x=$(x)+1)
 	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
@@ -753,7 +753,7 @@ re: fclean all
 # Not a target:
 src/utils/ft_atoi.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-24 22:39:42
+#  Last modified 2022-06-24 23:27:25
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -762,16 +762,16 @@ src/utils/ft_atoi.c:
 obj/parse.o: src/parse.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `parse'
-#  Last modified 2022-06-24 23:04:08
+#  Last modified 2022-06-24 23:27:35
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `makefile', line 66):
-	@tput civis
-	$(eval x=$(x)+1)
+#  commands to execute (from `makefile', line 67):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
+	@tput civis
+	$(eval x=$(x)+1)
 	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
@@ -789,7 +789,7 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `makefile', line 86):
+#  commands to execute (from `makefile', line 85):
 	@ $(RM) $(OBJ)
 	@ $(RM) $(OBJ_UTILS)
 	
@@ -797,16 +797,16 @@ clean:
 obj/init.o: src/init.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `init'
-#  Last modified 2022-06-24 23:04:08
+#  Last modified 2022-06-24 23:27:36
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `makefile', line 66):
-	@tput civis
-	$(eval x=$(x)+1)
+#  commands to execute (from `makefile', line 67):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
+	@tput civis
+	$(eval x=$(x)+1)
 	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
@@ -823,7 +823,7 @@ obj/init.o: src/init.c
 # Not a target:
 src/check_die.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-24 22:39:42
+#  Last modified 2022-06-24 23:27:25
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -832,16 +832,16 @@ src/check_die.c:
 obj/threads.o: src/threads.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `threads'
-#  Last modified 2022-06-24 23:04:09
+#  Last modified 2022-06-24 23:27:36
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `makefile', line 66):
-	@tput civis
-	$(eval x=$(x)+1)
+#  commands to execute (from `makefile', line 67):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
+	@tput civis
+	$(eval x=$(x)+1)
 	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
@@ -858,16 +858,16 @@ obj/threads.o: src/threads.c
 obj/forks.o: src/forks.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `forks'
-#  Last modified 2022-06-24 23:04:09
+#  Last modified 2022-06-24 23:27:37
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `makefile', line 66):
-	@tput civis
-	$(eval x=$(x)+1)
+#  commands to execute (from `makefile', line 67):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
+	@tput civis
+	$(eval x=$(x)+1)
 	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
@@ -884,21 +884,21 @@ obj/forks.o: src/forks.c
 # Not a target:
 src/utils/ft_itoa.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-24 22:39:42
+#  Last modified 2022-06-24 23:27:25
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
- 
 philo_bonus: obj/main.o obj/linked_list.o obj/ft_free.o obj/parse.o obj/init.o obj/destroy_mutex.o obj/print_state.o obj/get_time.o obj/behaviors.o obj/check_die.o obj/ft_usleep.o obj/threads.o obj/forks.o obj/utils/ft_isdigit.o obj/utils/ft_putstr_fd.o obj/utils/ft_strcmp.o obj/utils/ft_itoa.o obj/utils/ft_atoi.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-24 23:04:10
+#  Last modified 2022-06-24 23:27:37
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `makefile', line 60):
+ 
+#  commands to execute (from `makefile', line 61):
 	@ tput cvvis
 	@ $(CC) $(CFLAG) $(OBJ) $(OBJ_UTILS) -o $(NAME)
 	
@@ -906,7 +906,7 @@ philo_bonus: obj/main.o obj/linked_list.o obj/ft_free.o obj/parse.o obj/init.o o
 # Not a target:
 src/ft_usleep.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-24 22:39:42
+#  Last modified 2022-06-24 23:27:25
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -915,7 +915,7 @@ src/ft_usleep.c:
 # Not a target:
 src/utils/ft_isdigit.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-24 22:39:42
+#  Last modified 2022-06-24 23:27:25
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -924,7 +924,7 @@ src/utils/ft_isdigit.c:
 # Not a target:
 src/behaviors.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-24 22:39:42
+#  Last modified 2022-06-24 23:27:25
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -933,7 +933,7 @@ src/behaviors.c:
 # Not a target:
 src/print_state.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-24 22:39:42
+#  Last modified 2022-06-24 23:27:25
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -942,7 +942,7 @@ src/print_state.c:
 # Not a target:
 src/parse.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-24 22:39:42
+#  Last modified 2022-06-24 23:27:25
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -951,7 +951,7 @@ src/parse.c:
 # Not a target:
 src/init.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-24 22:39:42
+#  Last modified 2022-06-24 23:27:25
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -960,7 +960,7 @@ src/init.c:
 # Not a target:
 src/threads.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-24 22:39:42
+#  Last modified 2022-06-24 23:27:25
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -979,6 +979,6 @@ src/threads.c:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Jun 24 23:04:13 2022
+# Finished Make data base on Fri Jun 24 23:27:52 2022
 
  

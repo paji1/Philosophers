@@ -6,7 +6,7 @@
 #    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 04:31:34 by tel-mouh          #+#    #+#              #
-#    Updated: 2022/06/24 23:10:33 by tel-mouh         ###   ########.fr        #
+#    Updated: 2022/06/25 00:09:49 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,6 @@ $(NAME): $(OBJ) $(OBJ_UTILS)
 
 
 obj/%.o : src/%.c 
-    # let lines=$(lines)
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
 	@tput civis
@@ -71,7 +70,7 @@ obj/%.o : src/%.c
 	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
-	@ sleep 0.05
+	@ sleep 0.02
 	@number=$x ; while [[ $$number -ge 0 ]] ; do \
         printf ${YELLOW}"#"${NC}  ;\
         ((number = number - 1)) ; \
