@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Jun 24 16:59:21 2022
+# Make data base, printed on Fri Jun 24 17:11:33 2022
 
 # Variables
 
@@ -69,7 +69,7 @@ VSCODE_PIPE_LOGGING = true
 # environment
 PWD = /home/taha/desktop/Philosophers/philo
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-e4610bba-465c-4735-a313-8139a70c0ac5.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-f7b1c173-e876-46d9-9d46-bb058011168a.sock
 # environment
 WSL_INTEROP = /run/WSL/11_interop
 # environment
@@ -79,7 +79,7 @@ HOME = /home/taha
 # environment
 LOGNAME = taha
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # makefile (from 'makefile', line 20)
 CFLAG = -pthread -Wall -Werror -Wextra
 # environment
@@ -277,8 +277,8 @@ obj/main.o: src/main.c
 #  Implicit/static pattern stem: 'main'
 #  Last modified 2022-06-24 16:53:21.1690602
 #  File has been updated.
-#  Successfully updated.
  
+#  Successfully updated.
 #  recipe to execute (from 'makefile', line 54):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
@@ -557,8 +557,8 @@ src/parse.c:
 
 # Not a target:
 src/init.c:
-#  Implicit rule search has been done.
  
+#  Implicit rule search has been done.
 #  Last modified 2022-06-24 16:41:39.8690602
 #  File has been updated.
 #  Successfully updated.
@@ -584,6 +584,6 @@ src/threads.c:
 # strcache performance: lookups = 130 / hit rate = 27%
 # hash-table stats:
 # Load=94/8192=1%, Rehash=0, Collisions=3/130=2%
-# Finished Make data base on Fri Jun 24 16:59:21 2022
+# Finished Make data base on Fri Jun 24 17:11:33 2022
 
  

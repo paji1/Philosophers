@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   destroy_mutex.c                                    :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 18:46:00 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/24 17:18:50 by tel-mouh         ###   ########.fr       */
+/*   Created: 2022/06/14 14:25:14 by tel-mouh          #+#    #+#             */
+/*   Updated: 2022/06/22 18:08:41 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
-int init_mutexes(t_vars *vars)
+void ft_free(t_table **table)
 {
-	int i;
+	t_philo	*temp;
+	int 	i;
 
 	i = -1;
-	vars->fork = malloc(sizeof(pthread_mutex_t) * (vars->table->nb_philo + 1));
-	if (!(vars->fork))
-		return (1);
-	while (++i < vars->table->nb_philo + 1)
-		if (pthread_mutex_init(&vars->fork[i], NULL))
-			return (1);
-	return (0);
+	if (!*table || !(*table)->head)
+		return ;
+	while (++i < (*table)->nb_philo)
+	{
+		temp = (*table)->head->next;
+		free((*table)->head);
+		(*table)->head = temp;
+	}
+	free(*table);
 }
 
-void	destroy_mutexs(t_vars *vars)
+void free_all(t_vars *vars)
 {
-	int i;
-
-	i = -1;
-	while (++i < vars->table->nb_philo + 1)
-		pthread_mutex_destroy(&vars->fork[i]);
+	// printf("hello\n");
+	destroy_mutexs(vars);
+	free(vars->threads);
+	free(vars->fork);
+	ft_free(&vars->table);
+	free(vars);
 }
