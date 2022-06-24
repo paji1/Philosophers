@@ -6,7 +6,7 @@
 #    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 04:31:34 by tel-mouh          #+#    #+#              #
-#    Updated: 2022/06/24 22:48:31 by tel-mouh         ###   ########.fr        #
+#    Updated: 2022/06/24 23:10:33 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,11 +40,12 @@ NC='\033[0m'
 RE= '\033[0;34m'
 RED='\033[0;31m'
 YELLOW='\033[0;33m'
+
 lines=$(shell tput lines)
 CODE_SAVE_CURSOR='\033[s'
 CODE_RESTORE_CURSOR='\033[u'
 CODE_CURSOR_IN_SCROLL_AREA="\033[1A"
-PATH := $(PATH)
+
 # ###############executable##########################
 
 NAME = ./philo_bonus
@@ -57,18 +58,20 @@ o := 1
 all : $(NAME)
 
 $(NAME): $(OBJ) $(OBJ_UTILS)
+	@ tput cvvis
 	@ $(CC) $(CFLAG) $(OBJ) $(OBJ_UTILS) -o $(NAME)
 
 
 obj/%.o : src/%.c 
     # let lines=$(lines)
-	$(eval x=$(x)+1)
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
+	@tput civis
+	$(eval x=$(x)+1)
 	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
-	@ sleep 0.08
+	@ sleep 0.05
 	@number=$x ; while [[ $$number -ge 0 ]] ; do \
         printf ${YELLOW}"#"${NC}  ;\
         ((number = number - 1)) ; \
@@ -77,8 +80,6 @@ obj/%.o : src/%.c
 	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
 	@tput el
 
-
-	
 
 clean :
 	@ $(RM) $(OBJ)
