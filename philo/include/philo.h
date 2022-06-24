@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 09:10:13 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/23 01:58:56 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/24 16:21:20 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <pthread.h>
-#include "../libft/include/libft.h"
 #include <sys/time.h>
 #include "types.h"
+#include "utils.h"
 
 t_philo	*add_new_philo(int nb);
 void	*init_table(t_table **table, int nb);

@@ -1,8 +1,5 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory '/home/taha/desktop/Philosophers/philo'
-mkdir -p obj
-gcc -g -pthread -Wall -Werror -Wextra -c src/main.c -o obj/main.o
-echo '\033[0;34m'"Making the main.o"'\033[0m'
-gcc -g -pthread -Wall -Werror -Wextra obj/main.o obj/linked_list.o obj/ft_free.o obj/parse.o obj/init.o obj/destroy_mutex.o obj/print_state.o obj/get_time.o obj/behaviors.o obj/check_die.o obj/ft_usleep.o obj/threads.o obj/forks.o libft/library/libft.a -o ./philo
+make: Nothing to be done for 'all'.
 make: Leaving directory '/home/taha/desktop/Philosophers/philo'
  
