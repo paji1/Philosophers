@@ -6,7 +6,7 @@
 #    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 04:31:34 by tel-mouh          #+#    #+#              #
-#    Updated: 2022/06/24 22:33:22 by tel-mouh         ###   ########.fr        #
+#    Updated: 2022/06/24 22:48:31 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,27 +66,18 @@ obj/%.o : src/%.c
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
 	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
-	printf  ${CODE_SAVE_CURSOR}""
+	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
-	printf "["
-	number=$x ; while [[ $$number -ge 0 ]] ; do \
+	@ sleep 0.08
+	@number=$x ; while [[ $$number -ge 0 ]] ; do \
         printf ${YELLOW}"#"${NC}  ;\
         ((number = number - 1)) ; \
     done
-	printf  ${CODE_RESTORE_CURSOR}""
-	
+	@printf  ${CODE_RESTORE_CURSOR}""
+	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
+	@tput el
 
-obj/utils/%.o : src/utils/%.c 
-	@ mkdir -p obj/utils
-	@ $(CC) $(CFLAG) -c $< -o $@
-	@ printf ${YELLOW}"Making the"${NC}" $(notdir $@)\n"
-	@ $(eval r=$(r)+1)
-	@ printf "\033[$(lines);0f"
-	number=$r ; while [[ $$number -ge 0 ]] ; do \
-        printf ${YELLOW}"#"${NC}  ;\
-        ((number = number - 1)) ; \
-    done
-	printf  ${CODE_RESTORE_CURSOR}""
+
 	
 
 clean :
