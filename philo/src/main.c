@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 09:17:26 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/23 16:42:17 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/25 17:29:00 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,10 @@ int	check_all_philo(t_vars *vars)
 		{
 			philo->vars->is_died = 1;
 			printf("%ld %d died\n", get_time(philo), philo->id);
-			return (join_threads(vars),1);
+			if (philo->vars->table->nb_philo == 1)
+				return (detach_threads(vars), 1);
+			else
+				return (join_threads(vars),1);
 		}
 		philo = philo->next;
 	}
