@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Jun 25 16:22:19 2022
+# Make data base, printed on Mon Jun 27 23:06:53 2022
 
 # Variables
 
@@ -21,7 +21,7 @@ WSLENV = VSCODE_WSL_EXT_LOCATION/up
 # makefile (from 'makefile', line 29)
 OBJ = $(addprefix obj/, $(SRC:.c=.o))
 # makefile (from 'makefile', line 26)
-SRC = main.c linked_list.c ft_free.c parse.c init.c destroy_mutex.c print_state.c get_time.c behaviors.c check_die.c ft_usleep.c threads.c forks.c
+SRC = main.c  parse.c init.c print_state.c get_time.c behaviors.c check_die.c ft_usleep.c forks.c create_process.c send_kill.c
 # environment
 VSCODE_LOG_NATIVE = false
 # automatic
@@ -39,17 +39,21 @@ RM = rm -rf
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
 # environment
-_ = /bin/sh
+_ = /home/taha/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/node
 # makefile (from 'makefile', line 54)
 o := 1
 # makefile (from 'makefile', line 53)
-r := 15
-# makefile (from 'makefile', line 52)
-x = -1
+r := 13
+# makefile (from 'makefile', line 69)
+x = -1+1
 # makefile (from 'makefile', line 1)
 MAKEFILE_LIST :=  makefile
 # 'override' directive
 GNUMAKEFLAGS := 
+# environment
+W = /mnt/c/Users/Taha/Desktop/
+# environment
+LESS_TERMCAP_se = [0m
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'makefile', line 46)
@@ -61,29 +65,45 @@ VSCODE_CWD = /mnt/c/Users/Taha/AppData/Local/Programs/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/taha/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/CMake/bin:/mnt/c/MinGW/bin:/mnt/c/Program Files (x86)/GnuWin32/bin:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin:/mnt/c/Users/Taha/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/Taha/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/Taha/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Taha/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Taha/AppData/Local/Programs/Microsoft VS Code Insiders/bin:/mnt/c/Program Files/JetBrains/PyCharm 2021.3.3/bin:/mnt/c/MinGW/bin:/mnt/c/Program Files (x86)/GnuWin32/bin
+PATH = /home/taha/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/bin/remote-cli:/home/linuxbrew/.linuxbrew/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/CMake/bin:/mnt/c/MinGW/bin:/mnt/c/Program Files (x86)/GnuWin32/bin:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin:/mnt/c/Users/Taha/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/Taha/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/Taha/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Taha/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Taha/AppData/Local/Programs/Microsoft VS Code Insiders/bin:/mnt/c/Program Files/JetBrains/PyCharm 2021.3.3/bin:/mnt/c/MinGW/bin:/mnt/c/Program Files (x86)/GnuWin32/bin
 # environment
 VSCODE_WSL_DEBUG_INFO = true
+# environment
+LESS_TERMCAP_mb = [1;32m
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
 # makefile (from 'makefile', line 34)
 OBJ_UTILS = $(addprefix obj/utils/, $(SRC_UTILS:.c=.o))
+# environment
+SPACESHIP_VERSION = 3.16.7
 # environment
 VSCODE_LOG_STACK = false
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+LS_COLORS = no=00:fi=00:di=34:ow=34;40:ln=35:pi=30;44:so=35;44:do=35;44:bd=33;44:cd=37;44:or=05;37;41:mi=05;37;41:ex=01;31:*.cmd=01;31:*.exe=01;31:*.com=01;31:*.bat=01;31:*.reg=01;31:*.app=01;31:*.txt=32:*.org=32:*.md=32:*.mkd=32:*.h=32:*.hpp=32:*.c=32:*.C=32:*.cc=32:*.cpp=32:*.cxx=32:*.objc=32:*.cl=32:*.sh=32:*.bash=32:*.csh=32:*.zsh=32:*.el=32:*.vim=32:*.java=32:*.pl=32:*.pm=32:*.py=32:*.rb=32:*.hs=32:*.php=32:*.htm=32:*.html=32:*.shtml=32:*.erb=32:*.haml=32:*.xml=32:*.rdf=32:*.css=32:*.sass=32:*.scss=32:*.less=32:*.js=32:*.coffee=32:*.man=32:*.0=32:*.1=32:*.2=32:*.3=32:*.4=32:*.5=32:*.6=32:*.7=32:*.8=32:*.9=32:*.l=32:*.n=32:*.p=32:*.pod=32:*.tex=32:*.go=32:*.sql=32:*.csv=32:*.sv=32:*.svh=32:*.v=32:*.vh=32:*.vhd=32:*.bmp=33:*.cgm=33:*.dl=33:*.dvi=33:*.emf=33:*.eps=33:*.gif=33:*.jpeg=33:*.jpg=33:*.JPG=33:*.mng=33:*.pbm=33:*.pcx=33:*.pdf=33:*.pgm=33:*.png=33:*.PNG=33:*.ppm=33:*.pps=33:*.ppsx=33:*.ps=33:*.svg=33:*.svgz=33:*.tga=33:*.tif=33:*.tiff=33:*.xbm=33:*.xcf=33:*.xpm=33:*.xwd=33:*.xwd=33:*.yuv=33:*.nef=33:*.NEF=33:*.aac=33:*.au=33:*.flac=33:*.m4a=33:*.mid=33:*.midi=33:*.mka=33:*.mp3=33:*.mpa=33:*.mpeg=33:*.mpg=33:*.ogg=33:*.opus=33:*.ra=33:*.wav=33:*.anx=33:*.asf=33:*.avi=33:*.axv=33:*.flc=33:*.fli=33:*.flv=33:*.gl=33:*.m2v=33:*.m4v=33:*.mkv=33:*.mov=33:*.MOV=33:*.mp4=33:*.mp4v=33:*.mpeg=33:*.mpg=33:*.nuv=33:*.ogm=33:*.ogv=33:*.ogx=33:*.qt=33:*.rm=33:*.rmvb=33:*.swf=33:*.vob=33:*.webm=33:*.wmv=33:*.doc=31:*.docx=31:*.rtf=31:*.odt=31:*.dot=31:*.dotx=31:*.ott=31:*.xls=31:*.xlsx=31:*.ods=31:*.ots=31:*.ppt=31:*.pptx=31:*.odp=31:*.otp=31:*.fla=31:*.psd=31:*.7z=1;35:*.apk=1;35:*.arj=1;35:*.bin=1;35:*.bz=1;35:*.bz2=1;35:*.cab=1;35:*.deb=1;35:*.dmg=1;35:*.gem=1;35:*.gz=1;35:*.iso=1;35:*.jar=1;35:*.msi=1;35:*.rar=1;35:*.rpm=1;35:*.tar=1;35:*.tbz=1;35:*.tbz2=1;35:*.tgz=1;35:*.tx=1;35:*.war=1;35:*.xpi=1;35:*.xz=1;35:*.z=1;35:*.Z=1;35:*.zip=1;35:*.zst=1;35:*.ANSI-30-black=30:*.ANSI-01;30-brblack=01;30:*.ANSI-31-red=31:*.ANSI-01;31-brred=01;31:*.ANSI-32-green=32:*.ANSI-01;32-brgreen=01;32:*.ANSI-33-yellow=33:*.ANSI-01;33-bryellow=01;33:*.ANSI-34-blue=34:*.ANSI-01;34-brblue=01;34:*.ANSI-35-magenta=35:*.ANSI-01;35-brmagenta=01;35:*.ANSI-36-cyan=36:*.ANSI-01;36-brcyan=01;36:*.ANSI-37-white=37:*.ANSI-01;37-brwhite=01;37:*.log=01;32:*~=01;32:*#=01;32:*.bak=01;33:*.BAK=01;33:*.old=01;33:*.OLD=01;33:*.org_archive=01;33:*.off=01;33:*.OFF=01;33:*.dist=01;33:*.DIST=01;33:*.orig=01;33:*.ORIG=01;33:*.swp=01;33:*.swo=01;33:*.v=01;33:*.gpg=34:*.gpg=34:*.pgp=34:*.asc=34:*.3des=34:*.aes=34:*.enc=34:*.sqlite=34:
 # automatic
 %F = $(notdir $%)
+# environment
+DISPLAY = 172.21.160.1:10.0
 # makefile (from 'makefile', line 38)
 COLOR = '\033[0;32m'
 # environment
+LESS_TERMCAP_me = [0m
+# environment
 VSCODE_PIPE_LOGGING = true
 # environment
-PWD = /home/taha/desktop/Philosophers/philo_bonus
+WD = /mnt/c/Users/Taha/Downloads/
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-e48c5e54-3c6c-42e8-9093-59f505988c7f.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-9ee02873-e10c-4c0f-a169-467246e7d4ff.sock
 # environment
 WSL_INTEROP = /run/WSL/11_interop
 # makefile (from 'makefile', line 44)
 lines = $(shell tput lines)
+# makefile (from 'makefile', line 41)
+GREEN = '\033[0;32m'
+# environment
+LESS_TERMCAP_ue = [0m
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -91,13 +111,19 @@ HOME = /home/taha
 # environment
 LOGNAME = taha
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+COLOR1 = \033[1;\033[1;31m
+# environment
+ZSH = /home/taha/.oh-my-zsh
 # makefile (from 'makefile', line 22)
-CFLAG = -pthread -Wall -Werror -Wextra
+CFLAG = -pthread 
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
+# environment
+LESS_TERMCAP_md = [1;32m
 # environment
 MAKELEVEL := 0
 # default
@@ -105,7 +131,9 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 1
+SHLVL = 0
+# environment
+LESS_TERMCAP_so = [01;33m
 # makefile (from 'makefile', line 21)
 CC = gcc -g
 # default
@@ -118,6 +146,10 @@ USER = taha
 NAME = ./philo_bonus
 # makefile (from 'makefile', line 40)
 RE = '\033[0;34m'
+# environment
+COLOR4 = \033[1;\033[1;31m
+# environment
+LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -126,20 +158,24 @@ VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/Taha/.vscode/extensions/ms-vscode-remote.
 MAKE_COMMAND := make
 # makefile (from 'makefile', line 39)
 NC = '\033[0m'
+# environment
+COLOR2 = \033[1;\033[1;31m
+# environment
+OLDPWD = /mnt/c/Users/Taha/AppData/Local/Programs/Microsoft VS Code
 # default
 .VARIABLES := 
 # automatic
 *F = $(notdir $*)
 # makefile (from 'makefile', line 16)
 OS = $(shell uname -s)
-# makefile (from 'makefile', line 41)
-RED = '\033[0;31m'
 # makefile
 MAKEFLAGS = pqrR
 # environment
 MFLAGS = -pqrR
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
+# environment
+LESS_TERMCAP_us = [1;4;31m
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # makefile (from 'makefile', line 42)
@@ -155,9 +191,15 @@ MAKEFILES :=
 # makefile (from 'makefile', line 47)
 CODE_CURSOR_IN_SCROLL_AREA = "\033[1A"
 # environment
+PAGER = less
+# environment
+PWD = /home/taha/desktop/Philosophers/philo_bonus
+# environment
 LC_ALL = C
 # environment
 HOSTTYPE = x86_64
+# environment
+SPACESHIP_ROOT = /home/taha/.oh-my-zsh/custom/themes/spaceship-prompt
 # automatic
 ^F = $(notdir $^)
 # default
@@ -176,8 +218,10 @@ TERM = xterm-256color
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu-18.04
+# environment
+COLOR3 = \033[1;\033[1;31m
 # variable set hash-table stats:
-# Load=83/1024=8%, Rehash=0, Collisions=6/119=5%
+# Load=105/1024=10%, Rehash=0, Collisions=11/161=7%
 
 # Pattern-specific Variable Values
 
@@ -185,30 +229,31 @@ WSL_DISTRO_NAME = Ubuntu-18.04
 
 # Directories
 
-# . (device 2064, inode 79130): 8 files, no impossibilities.
-# src/utils (device 2064, inode 85906): 5 files, no impossibilities so far.
-# src (device 2064, inode 81148): 16 files, no impossibilities so far.
+# . (device 2064, inode 70388): 8 files, no impossibilities.
+# src (device 2064, inode 104487): 14 files, no impossibilities so far.
 
-# 29 files, no impossibilities in 3 directories.
+# 22 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
 obj/%.o: src/%.c
-#  recipe to execute (from 'makefile', line 66):
+#  recipe to execute (from 'makefile', line 69):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
 	@tput civis
 	$(eval x=$(x)+1)
-	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
+	@ printf $(notdir $@)"\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
-	@ sleep 0.02
+	@ sleep 0.03
 	@number=$x ; while [[ $$number -ge 0 ]] ; do \
-        printf ${YELLOW}"#"${NC}  ;\
+        printf ${YELLOW}"🟩"${NC}  ;\
         ((number = number - 1)) ; \
     done
 	@printf  ${CODE_RESTORE_CURSOR}""
 	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
+	@ printf  ${CODE_SAVE_CURSOR}""
+	printf ${RE}"🔷 Making the  --> "${NC} 
 	@tput el
 
 # 1 implicit rules, 0 (0.0%) terminal.
@@ -218,78 +263,34 @@ obj/%.o: src/%.c
 # Not a target:
 src/forks.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-25 16:17:04.2065196
+#  Last modified 2022-06-27 22:58:57.7609235
 #  File has been updated.
 #  Successfully updated.
-
-obj/destroy_mutex.o: src/destroy_mutex.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'destroy_mutex'
-#  Last modified 2022-06-25 16:21:34.7165196
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 66):
-	@ mkdir -p obj
-	@ $(CC) $(CFLAG) -c $< -o $@
-	@tput civis
-	$(eval x=$(x)+1)
-	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
-	@ printf  ${CODE_SAVE_CURSOR}""
-	@ printf "\033[$(lines);0f"
-	@ sleep 0.02
-	@number=$x ; while [[ $$number -ge 0 ]] ; do \
-        printf ${YELLOW}"#"${NC}  ;\
-        ((number = number - 1)) ; \
-    done
-	@printf  ${CODE_RESTORE_CURSOR}""
-	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
-	@tput el
-
-obj/linked_list.o: src/linked_list.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'linked_list'
-#  Last modified 2022-06-25 16:21:34.4265196
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 66):
-	@ mkdir -p obj
-	@ $(CC) $(CFLAG) -c $< -o $@
-	@tput civis
-	$(eval x=$(x)+1)
-	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
-	@ printf  ${CODE_SAVE_CURSOR}""
-	@ printf "\033[$(lines);0f"
-	@ sleep 0.02
-	@number=$x ; while [[ $$number -ge 0 ]] ; do \
-        printf ${YELLOW}"#"${NC}  ;\
-        ((number = number - 1)) ; \
-    done
-	@printf  ${CODE_RESTORE_CURSOR}""
-	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
-	@tput el
 
 obj/get_time.o: src/get_time.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'get_time'
-#  Last modified 2022-06-25 16:21:34.8365196
+#  Last modified 2022-06-27 23:01:19.9209235
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'makefile', line 66):
+#  recipe to execute (from 'makefile', line 69):
 	@ mkdir -p obj
+ 
 	@ $(CC) $(CFLAG) -c $< -o $@
 	@tput civis
 	$(eval x=$(x)+1)
-	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
+	@ printf $(notdir $@)"\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
-	@ sleep 0.02
+	@ sleep 0.03
 	@number=$x ; while [[ $$number -ge 0 ]] ; do \
-        printf ${YELLOW}"#"${NC}  ;\
+        printf ${YELLOW}"🟩"${NC}  ;\
         ((number = number - 1)) ; \
     done
- 
 	@printf  ${CODE_RESTORE_CURSOR}""
 	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
+	@ printf  ${CODE_SAVE_CURSOR}""
+	printf ${RE}"🔷 Making the  --> "${NC} 
 	@tput el
 
 all: philo_bonus
@@ -297,253 +298,160 @@ all: philo_bonus
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/19=0%
 
-obj/ft_free.o: src/ft_free.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'ft_free'
-#  Last modified 2022-06-25 16:21:34.4865196
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 66):
-	@ mkdir -p obj
-	@ $(CC) $(CFLAG) -c $< -o $@
-	@tput civis
-	$(eval x=$(x)+1)
-	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
-	@ printf  ${CODE_SAVE_CURSOR}""
-	@ printf "\033[$(lines);0f"
-	@ sleep 0.02
-	@number=$x ; while [[ $$number -ge 0 ]] ; do \
-        printf ${YELLOW}"#"${NC}  ;\
-        ((number = number - 1)) ; \
-    done
-	@printf  ${CODE_RESTORE_CURSOR}""
-	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
-	@tput el
-
-obj/utils/ft_strcmp.o: src/utils/ft_strcmp.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'utils/ft_strcmp'
-#  Last modified 2022-06-25 16:21:35.3565196
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 66):
-	@ mkdir -p obj
-	@ $(CC) $(CFLAG) -c $< -o $@
-	@tput civis
-	$(eval x=$(x)+1)
-	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
-	@ printf  ${CODE_SAVE_CURSOR}""
-	@ printf "\033[$(lines);0f"
-	@ sleep 0.02
-	@number=$x ; while [[ $$number -ge 0 ]] ; do \
-        printf ${YELLOW}"#"${NC}  ;\
-        ((number = number - 1)) ; \
-    done
-	@printf  ${CODE_RESTORE_CURSOR}""
-	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
-	@tput el
+# Not a target:
+obj/utils/ft_strcmp.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 obj/main.o: src/main.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  Last modified 2022-06-25 16:21:34.3565196
+#  Last modified 2022-06-27 23:01:19.5609235
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'makefile', line 66):
+#  recipe to execute (from 'makefile', line 69):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
 	@tput civis
 	$(eval x=$(x)+1)
-	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
+	@ printf $(notdir $@)"\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
-	@ sleep 0.02
+	@ sleep 0.03
 	@number=$x ; while [[ $$number -ge 0 ]] ; do \
-        printf ${YELLOW}"#"${NC}  ;\
+        printf ${YELLOW}"🟩"${NC}  ;\
         ((number = number - 1)) ; \
     done
 	@printf  ${CODE_RESTORE_CURSOR}""
 	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
-	@tput el
-
-# Not a target:
-src/destroy_mutex.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-25 16:17:04.2065196
-#  File has been updated.
-#  Successfully updated.
-
-obj/utils/ft_putstr_fd.o: src/utils/ft_putstr_fd.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'utils/ft_putstr_fd'
-#  Last modified 2022-06-25 16:21:35.3065196
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 66):
-	@ mkdir -p obj
-	@ $(CC) $(CFLAG) -c $< -o $@
-	@tput civis
-	$(eval x=$(x)+1)
-	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
-	@ printf "\033[$(lines);0f"
-	@ sleep 0.02
-	@number=$x ; while [[ $$number -ge 0 ]] ; do \
-        printf ${YELLOW}"#"${NC}  ;\
-        ((number = number - 1)) ; \
-    done
-	@printf  ${CODE_RESTORE_CURSOR}""
-	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
+	printf ${RE}"🔷 Making the  --> "${NC} 
 	@tput el
 
 # Not a target:
-src/linked_list.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-25 16:17:04.2065196
-#  File has been updated.
-#  Successfully updated.
+obj/utils/ft_putstr_fd.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-25 16:17:04.2065196
+#  Last modified 2022-06-27 23:06:49.8809235
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/get_time.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-25 16:17:04.2065196
+#  Last modified 2022-06-27 18:11:33.8103798
 #  File has been updated.
 #  Successfully updated.
 
-# Not a target:
-src/ft_free.c:
+obj/create_process.o: src/create_process.c
 #  Implicit rule search has been done.
-#  Last modified 2022-06-25 16:17:04.2065196
+#  Implicit/static pattern stem: 'create_process'
+#  Last modified 2022-06-27 23:01:20.3509235
 #  File has been updated.
 #  Successfully updated.
-
-obj/utils/ft_atoi.o: src/utils/ft_atoi.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'utils/ft_atoi'
-#  Last modified 2022-06-25 16:21:35.4865196
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 66):
+#  recipe to execute (from 'makefile', line 69):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
 	@tput civis
 	$(eval x=$(x)+1)
-	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
+	@ printf $(notdir $@)"\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
-	@ sleep 0.02
+	@ sleep 0.03
 	@number=$x ; while [[ $$number -ge 0 ]] ; do \
-        printf ${YELLOW}"#"${NC}  ;\
+        printf ${YELLOW}"🟩"${NC}  ;\
         ((number = number - 1)) ; \
     done
 	@printf  ${CODE_RESTORE_CURSOR}""
 	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
+	@ printf  ${CODE_SAVE_CURSOR}""
+	printf ${RE}"🔷 Making the  --> "${NC} 
 	@tput el
 
 # Not a target:
-src/utils/ft_strcmp.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-25 16:17:04.2165196
-#  File has been updated.
-#  Successfully updated.
+obj/utils/ft_atoi.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 obj/check_die.o: src/check_die.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'check_die'
-#  Last modified 2022-06-25 16:21:34.9865196
+#  Last modified 2022-06-27 23:01:20.0909235
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'makefile', line 66):
+#  recipe to execute (from 'makefile', line 69):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
 	@tput civis
 	$(eval x=$(x)+1)
-	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
+	@ printf $(notdir $@)"\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
-	@ sleep 0.02
+	@ sleep 0.03
 	@number=$x ; while [[ $$number -ge 0 ]] ; do \
-        printf ${YELLOW}"#"${NC}  ;\
+        printf ${YELLOW}"🟩"${NC}  ;\
         ((number = number - 1)) ; \
     done
 	@printf  ${CODE_RESTORE_CURSOR}""
 	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
+	@ printf  ${CODE_SAVE_CURSOR}""
+	printf ${RE}"🔷 Making the  --> "${NC} 
 	@tput el
 
 fclean: clean
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 88):
+#  recipe to execute (from 'makefile', line 92):
 	@ $(RM) $(NAME)
 
 # Not a target:
 src/main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-25 16:17:04.2065196
+#  Last modified 2022-06-27 23:01:18.0009235
 #  File has been updated.
 #  Successfully updated.
-
-obj/utils/ft_itoa.o: src/utils/ft_itoa.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'utils/ft_itoa'
-#  Last modified 2022-06-25 16:21:35.4265196
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 66):
-	@ mkdir -p obj
-	@ $(CC) $(CFLAG) -c $< -o $@
-	@tput civis
-	$(eval x=$(x)+1)
-	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
-	@ printf  ${CODE_SAVE_CURSOR}""
-	@ printf "\033[$(lines);0f"
-	@ sleep 0.02
-	@number=$x ; while [[ $$number -ge 0 ]] ; do \
-        printf ${YELLOW}"#"${NC}  ;\
-        ((number = number - 1)) ; \
-    done
-	@printf  ${CODE_RESTORE_CURSOR}""
-	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
-	@tput el
 
 # Not a target:
-src/utils/ft_putstr_fd.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-25 16:17:04.2165196
-#  File has been updated.
-#  Successfully updated.
+obj/utils/ft_itoa.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 obj/ft_usleep.o: src/ft_usleep.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'ft_usleep'
-#  Last modified 2022-06-25 16:21:35.0465196
+#  Last modified 2022-06-27 23:01:20.1809235
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'makefile', line 66):
+#  recipe to execute (from 'makefile', line 69):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
 	@tput civis
 	$(eval x=$(x)+1)
-	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
+	@ printf $(notdir $@)"\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
-	@ sleep 0.02
+	@ sleep 0.03
 	@number=$x ; while [[ $$number -ge 0 ]] ; do \
-        printf ${YELLOW}"#"${NC}  ;\
+        printf ${YELLOW}"🟩"${NC}  ;\
         ((number = number - 1)) ; \
     done
 	@printf  ${CODE_RESTORE_CURSOR}""
 	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
+	@ printf  ${CODE_SAVE_CURSOR}""
+	printf ${RE}"🔷 Making the  --> "${NC} 
 	@tput el
 
 # Not a target:
@@ -552,74 +460,67 @@ obj/ft_usleep.o: src/ft_usleep.c
 #  Modification time never checked.
 #  File has not been updated.
 
-obj/utils/ft_isdigit.o: src/utils/ft_isdigit.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'utils/ft_isdigit'
-#  Last modified 2022-06-25 16:21:35.2465196
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 66):
-	@ mkdir -p obj
-	@ $(CC) $(CFLAG) -c $< -o $@
-	@tput civis
-	$(eval x=$(x)+1)
-	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
-	@ printf  ${CODE_SAVE_CURSOR}""
-	@ printf "\033[$(lines);0f"
-	@ sleep 0.02
-	@number=$x ; while [[ $$number -ge 0 ]] ; do \
-        printf ${YELLOW}"#"${NC}  ;\
-        ((number = number - 1)) ; \
-    done
-	@printf  ${CODE_RESTORE_CURSOR}""
-	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
-	@tput el
+# Not a target:
+obj/utils/ft_isdigit.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 obj/behaviors.o: src/behaviors.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'behaviors'
-#  Last modified 2022-06-25 16:21:34.9065196
+#  Last modified 2022-06-27 23:01:20.0009235
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'makefile', line 66):
+#  recipe to execute (from 'makefile', line 69):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
 	@tput civis
 	$(eval x=$(x)+1)
-	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
+	@ printf $(notdir $@)"\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
-	@ sleep 0.02
+	@ sleep 0.03
 	@number=$x ; while [[ $$number -ge 0 ]] ; do \
-        printf ${YELLOW}"#"${NC}  ;\
+        printf ${YELLOW}"🟩"${NC}  ;\
         ((number = number - 1)) ; \
     done
- 
 	@printf  ${CODE_RESTORE_CURSOR}""
 	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
+	@ printf  ${CODE_SAVE_CURSOR}""
+	printf ${RE}"🔷 Making the  --> "${NC} 
 	@tput el
+
+# Not a target:
+src/create_process.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-27 23:00:23.3809235
+#  File has been updated.
+#  Successfully updated.
 
 obj/print_state.o: src/print_state.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'print_state'
-#  Last modified 2022-06-25 16:21:34.7765196
+#  Last modified 2022-06-27 23:01:19.8409235
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'makefile', line 66):
+#  recipe to execute (from 'makefile', line 69):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
 	@tput civis
 	$(eval x=$(x)+1)
-	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
+	@ printf $(notdir $@)"\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
-	@ sleep 0.02
+	@ sleep 0.03
 	@number=$x ; while [[ $$number -ge 0 ]] ; do \
-        printf ${YELLOW}"#"${NC}  ;\
+        printf ${YELLOW}"🟩"${NC}  ;\
         ((number = number - 1)) ; \
     done
 	@printf  ${CODE_RESTORE_CURSOR}""
 	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
+	@ printf  ${CODE_SAVE_CURSOR}""
+	printf ${RE}"🔷 Making the  --> "${NC} 
 	@tput el
 
 re: fclean all
@@ -627,199 +528,210 @@ re: fclean all
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-src/utils/ft_atoi.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-25 16:17:04.2065196
-#  File has been updated.
-#  Successfully updated.
-
 obj/parse.o: src/parse.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'parse'
-#  Last modified 2022-06-25 16:21:34.5565196
+#  Last modified 2022-06-27 23:01:19.6609235
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'makefile', line 66):
+#  recipe to execute (from 'makefile', line 69):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
 	@tput civis
 	$(eval x=$(x)+1)
-	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
+	@ printf $(notdir $@)"\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
-	@ sleep 0.02
+	@ sleep 0.03
 	@number=$x ; while [[ $$number -ge 0 ]] ; do \
-        printf ${YELLOW}"#"${NC}  ;\
+        printf ${YELLOW}"🟩"${NC}  ;\
         ((number = number - 1)) ; \
     done
 	@printf  ${CODE_RESTORE_CURSOR}""
 	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
+	@ printf  ${CODE_SAVE_CURSOR}""
+	printf ${RE}"🔷 Making the  --> "${NC} 
 	@tput el
 
 clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 84):
+#  recipe to execute (from 'makefile', line 88):
 	@ $(RM) $(OBJ)
 	@ $(RM) $(OBJ_UTILS)
 
 obj/init.o: src/init.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'init'
-#  Last modified 2022-06-25 16:21:34.6365196
+#  Last modified 2022-06-27 23:01:19.7509235
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'makefile', line 66):
+#  recipe to execute (from 'makefile', line 69):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
 	@tput civis
+ 
 	$(eval x=$(x)+1)
-	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
+	@ printf $(notdir $@)"\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
-	@ sleep 0.02
+	@ sleep 0.03
 	@number=$x ; while [[ $$number -ge 0 ]] ; do \
-        printf ${YELLOW}"#"${NC}  ;\
+        printf ${YELLOW}"🟩"${NC}  ;\
         ((number = number - 1)) ; \
     done
 	@printf  ${CODE_RESTORE_CURSOR}""
 	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
+	@ printf  ${CODE_SAVE_CURSOR}""
+	printf ${RE}"🔷 Making the  --> "${NC} 
 	@tput el
 
 # Not a target:
 src/check_die.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-25 16:17:04.2065196
+#  Last modified 2022-06-27 23:00:39.2309235
 #  File has been updated.
 #  Successfully updated.
 
-obj/threads.o: src/threads.c
+obj/send_kill.o: src/send_kill.c
 #  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'threads'
-#  Last modified 2022-06-25 16:21:35.1065196
+#  Implicit/static pattern stem: 'send_kill'
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 66):
+#  Needs to be updated (-q is set).
+# automatic
+# @ := obj/send_kill.o
+# automatic
+# % := 
+# automatic
+# * := send_kill
+# automatic
+# + := src/send_kill.c
+# automatic
+# | := 
+# automatic
+# < := src/send_kill.c
+# automatic
+# ^ := src/send_kill.c
+# automatic
+# ? := src/send_kill.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=6/30=20%
+#  recipe to execute (from 'makefile', line 69):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
 	@tput civis
 	$(eval x=$(x)+1)
-	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
+	@ printf $(notdir $@)"\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
-	@ sleep 0.02
+	@ sleep 0.03
 	@number=$x ; while [[ $$number -ge 0 ]] ; do \
-        printf ${YELLOW}"#"${NC}  ;\
+        printf ${YELLOW}"🟩"${NC}  ;\
         ((number = number - 1)) ; \
     done
 	@printf  ${CODE_RESTORE_CURSOR}""
 	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
+	@ printf  ${CODE_SAVE_CURSOR}""
+	printf ${RE}"🔷 Making the  --> "${NC} 
 	@tput el
 
 obj/forks.o: src/forks.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'forks'
-#  Last modified 2022-06-25 16:21:35.1765196
+#  Last modified 2022-06-27 23:01:20.2609235
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'makefile', line 66):
+#  recipe to execute (from 'makefile', line 69):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
 	@tput civis
 	$(eval x=$(x)+1)
-	@ printf ${RE}"Making the"${NC}" $(notdir $@)\n"
+	@ printf $(notdir $@)"\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
-	@ sleep 0.02
+	@ sleep 0.03
 	@number=$x ; while [[ $$number -ge 0 ]] ; do \
-        printf ${YELLOW}"#"${NC}  ;\
+        printf ${YELLOW}"🟩"${NC}  ;\
         ((number = number - 1)) ; \
     done
 	@printf  ${CODE_RESTORE_CURSOR}""
 	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
+	@ printf  ${CODE_SAVE_CURSOR}""
+	printf ${RE}"🔷 Making the  --> "${NC} 
 	@tput el
 
-# Not a target:
-src/utils/ft_itoa.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-25 16:17:04.2165196
-#  File has been updated.
-#  Successfully updated.
-
-philo_bonus: obj/main.o obj/linked_list.o obj/ft_free.o obj/parse.o obj/init.o obj/destroy_mutex.o obj/print_state.o obj/get_time.o obj/behaviors.o obj/check_die.o obj/ft_usleep.o obj/threads.o obj/forks.o obj/utils/ft_isdigit.o obj/utils/ft_putstr_fd.o obj/utils/ft_strcmp.o obj/utils/ft_itoa.o obj/utils/ft_atoi.o
+philo_bonus: obj/main.o obj/parse.o obj/init.o obj/print_state.o obj/get_time.o obj/behaviors.o obj/check_die.o obj/ft_usleep.o obj/forks.o obj/create_process.o obj/send_kill.o obj/utils/ft_isdigit.o obj/utils/ft_putstr_fd.o obj/utils/ft_strcmp.o obj/utils/ft_itoa.o obj/utils/ft_atoi.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-25 16:21:35.6065196
+#  Last modified 2022-06-27 23:01:20.8809235
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/19=0%
 #  recipe to execute (from 'makefile', line 61):
+	@printf  ${CODE_RESTORE_CURSOR}""
+	@tput el
+	@ printf ${GREEN}"\rMaking is done✅\n"${NC}
 	@ tput cvvis
 	@ $(CC) $(CFLAG) $(OBJ) $(OBJ_UTILS) -o $(NAME)
 
 # Not a target:
 src/ft_usleep.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-25 16:17:04.2065196
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-src/utils/ft_isdigit.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-25 16:17:04.2165196
+#  Last modified 2022-06-27 18:11:33.8103798
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/behaviors.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-25 16:17:04.2065196
+#  Last modified 2022-06-27 22:29:44.7709235
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/print_state.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-25 16:17:04.2065196
+#  Last modified 2022-06-27 22:14:32.8533528
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/parse.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-25 16:17:04.2065196
+#  Last modified 2022-06-27 18:11:33.8103798
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/init.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-25 16:17:04.2065196
+#  Last modified 2022-06-27 22:56:49.6209235
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
-src/threads.c:
+src/send_kill.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-25 16:17:04.2065196
+#  Last modified 2022-06-27 23:06:20.0509235
 #  File has been updated.
 #  Successfully updated.
 
 # files hash-table stats:
-# Load=44/1024=4%, Rehash=0, Collisions=0/132=0%
+# Load=35/1024=3%, Rehash=0, Collisions=0/100=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 92 / storage = 1155 B / avg = 12 B
-# current buf: size = 8162 B / used = 1155 B / count = 92 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 68 / storage = 799 B / avg = 11 B
+# current buf: size = 8162 B / used = 799 B / count = 68 / avg = 11 B
 
-# strcache performance: lookups = 128 / hit rate = 28%
+# strcache performance: lookups = 97 / hit rate = 29%
 # hash-table stats:
-# Load=92/8192=1%, Rehash=0, Collisions=3/128=2%
-# Finished Make data base on Sat Jun 25 16:22:19 2022
+# Load=68/8192=1%, Rehash=0, Collisions=3/97=3%
+# Finished Make data base on Mon Jun 27 23:06:53 2022
 
  

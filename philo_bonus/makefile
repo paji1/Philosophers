@@ -6,7 +6,7 @@
 #    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 04:31:34 by tel-mouh          #+#    #+#              #
-#    Updated: 2022/06/25 16:58:58 by tel-mouh         ###   ########.fr        #
+#    Updated: 2022/06/27 23:06:49 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,13 +19,13 @@ OS = $(shell uname -s)
 
 RM = rm -rf
 CC = gcc -g
-CFLAG = -pthread -Wall -Werror -Wextra
+CFLAG = -pthread 
 
 # ################SRCS_Objs##########################
 
-SRC = main.c linked_list.c ft_free.c parse.c init.c destroy_mutex.c\
-	print_state.c get_time.c behaviors.c check_die.c ft_usleep.c threads.c \
-	forks.c
+SRC = main.c  parse.c init.c \
+	print_state.c get_time.c behaviors.c check_die.c ft_usleep.c  \
+	forks.c create_process.c send_kill.c
 OBJ = $(addprefix obj/, $(SRC:.c=.o))
 
 # ################SRCS_Objs_Utils####################

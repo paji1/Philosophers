@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 13:03:17 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/23 01:36:52 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/28 00:33:39 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,26 +33,20 @@ typedef struct	s_philo
 	struct 			s_philo *prev;
 }	t_philo;
 	
-typedef struct s_table
-{
-	t_philo 		*head;
-	t_philo 		*tail;
-	int				time_to_die;
-	int				time_to_eat;
-	int	 			time_to_sleep;
-	int 			must_to_eat;
-	int				nb_philo;
-}	t_table;
 
 typedef struct s_vars
 {
 	t_timeval		eposh;
 	t_timeval		current_time;
-	void 			*data;
-	pthread_mutex_t	*fork;
-	t_table			*table;
-	pthread_t		*threads;
+	pid_t 			*pids;
+	sem_t 			*semaphore;
+	sem_t 			*sem_deat;
 	int				is_died;
+	int				time_to_die;
+	int				time_to_eat;
+	int	 			time_to_sleep;
+	int 			must_to_eat;
+	int				nb_philo;
 	int				n_num;
 }t_vars;
 #endif

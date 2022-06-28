@@ -6,33 +6,27 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 18:41:09 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/23 14:53:55 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/28 15:18:55 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
-int	check_pass_time(t_philo *philo)
+void	*check_die(void *phil)
 {
-	pthread_mutex_lock(&philo->vars->fork[philo->vars->table->nb_philo]);
-	if (philo->vars->is_died)
+	t_philo *philo;
+
+	
+	philo = (t_philo *)phil;
+	while (1)
 	{
-		pthread_mutex_unlock(&philo->vars->fork[philo->vars->table->nb_philo]);
-		return  1;
+		sem_wait(philo->vars->sem_deat);
+		if (get_time(philo) - philo->last_eat > philo->vars->time_to_die)
+		{
+			printf("%ld %d is died\n", get_time(philo) , philo->id);
+			exit(EXIT_SUCCESS);
+		}
+		sem_post(philo->vars->sem_deat);
 	}
-	if (get_time(philo) - philo->last_eat > philo->vars->table->time_to_die)
-	{
-		philo->vars->is_died = 1;
-		pthread_mutex_unlock(&philo->vars->fork[philo->vars->table->nb_philo]);
-		return (1);
-	}
-	// printf("hello");
-	if (philo->vars->is_died)
-	{
-		
-		pthread_mutex_unlock(&philo->vars->fork[philo->vars->table->nb_philo]);
-		return  1;
-	}
-	pthread_mutex_unlock(&philo->vars->fork[philo->vars->table->nb_philo]);
-	return (0);
+	return (NULL);
 }
