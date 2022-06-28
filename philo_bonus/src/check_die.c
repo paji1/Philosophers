@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 18:41:09 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/28 15:57:05 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/28 16:37:11 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ void	*check_die(void *phil)
 		sem_wait(philo->vars->sem_deat);
 		if (philo->vars->must_to_eat && \
 			philo->vars->n_num >= philo->vars->must_to_eat)
-			exit(EXIT_SUCCESS);
+		{
+			sem_post(philo->vars->sem_deat);
+			exit(3);
+		}
 		if (get_time(philo) - philo->last_eat > philo->vars->time_to_die)
 		{
 			printf("%ld %d is died\n", get_time(philo) , philo->id);

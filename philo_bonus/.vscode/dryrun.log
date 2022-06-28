@@ -1,6 +1,281 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/taha/desktop/Philosophers/philo_bonus'
- 
-make: Nothing to be done for 'all'.
+mkdir -p obj
+mkdir -p obj/utils
+gcc -g -pthread  -c src/main.c -o obj/main.o
+tput civis
+printf main.o"\n"
+printf  '\033[s'""
+printf "\033[1;0f"
+sleep 0.05
+number=-1+1 ; while [[ $number -ge 0 ]] ; do \
+        printf '\033[0;33m'"🟩"'\033[0m'  ;\
+        ((number = number - 1)) ; \
+    done
+printf  '\033[u'""
+printf  "\033[1A"""
+printf  '\033[s'""
+printf '\033[0;34m'"🔷 Making the  --> "'\033[0m' 
+tput el
+mkdir -p obj
+mkdir -p obj/utils
+gcc -g -pthread  -c src/parse.c -o obj/parse.o
+tput civis
+printf parse.o"\n"
+printf  '\033[s'""
+printf "\033[1;0f"
+sleep 0.05
+number=-1+1+1 ; while [[ $number -ge 0 ]] ; do \
+        printf '\033[0;33m'"🟩"'\033[0m'  ;\
+        ((number = number - 1)) ; \
+    done
+printf  '\033[u'""
+printf  "\033[1A"""
+printf  '\033[s'""
+printf '\033[0;34m'"🔷 Making the  --> "'\033[0m' 
+tput el
+mkdir -p obj
+mkdir -p obj/utils
+gcc -g -pthread  -c src/init.c -o obj/init.o
+tput civis
+printf init.o"\n"
+printf  '\033[s'""
+printf "\033[1;0f"
+sleep 0.05
+number=-1+1+1+1 ; while [[ $number -ge 0 ]] ; do \
+        printf '\033[0;33m'"🟩"'\033[0m'  ;\
+        ((number = number - 1)) ; \
+    done
+printf  '\033[u'""
+printf  "\033[1A"""
+printf  '\033[s'""
+printf '\033[0;34m'"🔷 Making the  --> "'\033[0m' 
+tput el
+mkdir -p obj
+mkdir -p obj/utils
+gcc -g -pthread  -c src/print_state.c -o obj/print_state.o
+tput civis
+printf print_state.o"\n"
+printf  '\033[s'""
+printf "\033[1;0f"
+sleep 0.05
+number=-1+1+1+1+1 ; while [[ $number -ge 0 ]] ; do \
+        printf '\033[0;33m'"🟩"'\033[0m'  ;\
+        ((number = number - 1)) ; \
+    done
+printf  '\033[u'""
+printf  "\033[1A"""
+printf  '\033[s'""
+printf '\033[0;34m'"🔷 Making the  --> "'\033[0m' 
+tput el
+mkdir -p obj
+mkdir -p obj/utils
+gcc -g -pthread  -c src/get_time.c -o obj/get_time.o
+tput civis
+printf get_time.o"\n"
+printf  '\033[s'""
+printf "\033[1;0f"
+sleep 0.05
+number=-1+1+1+1+1+1 ; while [[ $number -ge 0 ]] ; do \
+        printf '\033[0;33m'"🟩"'\033[0m'  ;\
+        ((number = number - 1)) ; \
+    done
+printf  '\033[u'""
+printf  "\033[1A"""
+printf  '\033[s'""
+printf '\033[0;34m'"🔷 Making the  --> "'\033[0m' 
+tput el
+mkdir -p obj
+mkdir -p obj/utils
+gcc -g -pthread  -c src/behaviors.c -o obj/behaviors.o
+tput civis
+printf behaviors.o"\n"
+printf  '\033[s'""
+printf "\033[1;0f"
+sleep 0.05
+number=-1+1+1+1+1+1+1 ; while [[ $number -ge 0 ]] ; do \
+        printf '\033[0;33m'"🟩"'\033[0m'  ;\
+        ((number = number - 1)) ; \
+    done
+printf  '\033[u'""
+printf  "\033[1A"""
+printf  '\033[s'""
+printf '\033[0;34m'"🔷 Making the  --> "'\033[0m' 
+tput el
+mkdir -p obj
+mkdir -p obj/utils
+gcc -g -pthread  -c src/check_die.c -o obj/check_die.o
+tput civis
+printf check_die.o"\n"
+printf  '\033[s'""
+printf "\033[1;0f"
+sleep 0.05
+number=-1+1+1+1+1+1+1+1 ; while [[ $number -ge 0 ]] ; do \
+        printf '\033[0;33m'"🟩"'\033[0m'  ;\
+        ((number = number - 1)) ; \
+    done
+printf  '\033[u'""
+printf  "\033[1A"""
+printf  '\033[s'""
+printf '\033[0;34m'"🔷 Making the  --> "'\033[0m' 
+tput el
+mkdir -p obj
+mkdir -p obj/utils
+gcc -g -pthread  -c src/ft_usleep.c -o obj/ft_usleep.o
+tput civis
+printf ft_usleep.o"\n"
+printf  '\033[s'""
+printf "\033[1;0f"
+sleep 0.05
+number=-1+1+1+1+1+1+1+1+1 ; while [[ $number -ge 0 ]] ; do \
+        printf '\033[0;33m'"🟩"'\033[0m'  ;\
+        ((number = number - 1)) ; \
+    done
+printf  '\033[u'""
+printf  "\033[1A"""
+printf  '\033[s'""
+printf '\033[0;34m'"🔷 Making the  --> "'\033[0m' 
+tput el
+mkdir -p obj
+mkdir -p obj/utils
+gcc -g -pthread  -c src/forks.c -o obj/forks.o
+tput civis
+printf forks.o"\n"
+printf  '\033[s'""
+printf "\033[1;0f"
+sleep 0.05
+number=-1+1+1+1+1+1+1+1+1+1 ; while [[ $number -ge 0 ]] ; do \
+        printf '\033[0;33m'"🟩"'\033[0m'  ;\
+        ((number = number - 1)) ; \
+    done
+printf  '\033[u'""
+printf  "\033[1A"""
+printf  '\033[s'""
+printf '\033[0;34m'"🔷 Making the  --> "'\033[0m' 
+tput el
+mkdir -p obj
+mkdir -p obj/utils
+gcc -g -pthread  -c src/create_process.c -o obj/create_process.o
+tput civis
+printf create_process.o"\n"
+printf  '\033[s'""
+printf "\033[1;0f"
+sleep 0.05
+number=-1+1+1+1+1+1+1+1+1+1+1 ; while [[ $number -ge 0 ]] ; do \
+        printf '\033[0;33m'"🟩"'\033[0m'  ;\
+        ((number = number - 1)) ; \
+    done
+printf  '\033[u'""
+printf  "\033[1A"""
+printf  '\033[s'""
+printf '\033[0;34m'"🔷 Making the  --> "'\033[0m' 
+tput el
+mkdir -p obj
+mkdir -p obj/utils
+gcc -g -pthread  -c src/send_kill.c -o obj/send_kill.o
+tput civis
+printf send_kill.o"\n"
+printf  '\033[s'""
+printf "\033[1;0f"
+sleep 0.05
+number=-1+1+1+1+1+1+1+1+1+1+1+1 ; while [[ $number -ge 0 ]] ; do \
+        printf '\033[0;33m'"🟩"'\033[0m'  ;\
+        ((number = number - 1)) ; \
+    done
+printf  '\033[u'""
+printf  "\033[1A"""
+printf  '\033[s'""
+printf '\033[0;34m'"🔷 Making the  --> "'\033[0m' 
+tput el
+mkdir -p obj
+mkdir -p obj/utils
+gcc -g -pthread  -c src/utils/ft_isdigit.c -o obj/utils/ft_isdigit.o
+tput civis
+printf ft_isdigit.o"\n"
+printf  '\033[s'""
+printf "\033[1;0f"
+sleep 0.05
+number=-1+1+1+1+1+1+1+1+1+1+1+1+1 ; while [[ $number -ge 0 ]] ; do \
+        printf '\033[0;33m'"🟩"'\033[0m'  ;\
+        ((number = number - 1)) ; \
+    done
+printf  '\033[u'""
+printf  "\033[1A"""
+printf  '\033[s'""
+printf '\033[0;34m'"🔷 Making the  --> "'\033[0m' 
+tput el
+mkdir -p obj
+mkdir -p obj/utils
+gcc -g -pthread  -c src/utils/ft_putstr_fd.c -o obj/utils/ft_putstr_fd.o
+tput civis
+printf ft_putstr_fd.o"\n"
+printf  '\033[s'""
+printf "\033[1;0f"
+sleep 0.05
+number=-1+1+1+1+1+1+1+1+1+1+1+1+1+1 ; while [[ $number -ge 0 ]] ; do \
+        printf '\033[0;33m'"🟩"'\033[0m'  ;\
+        ((number = number - 1)) ; \
+    done
+printf  '\033[u'""
+printf  "\033[1A"""
+printf  '\033[s'""
+printf '\033[0;34m'"🔷 Making the  --> "'\033[0m' 
+tput el
+mkdir -p obj
+mkdir -p obj/utils
+gcc -g -pthread  -c src/utils/ft_strcmp.c -o obj/utils/ft_strcmp.o
+tput civis
+printf ft_strcmp.o"\n"
+printf  '\033[s'""
+printf "\033[1;0f"
+sleep 0.05
+number=-1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ; while [[ $number -ge 0 ]] ; do \
+        printf '\033[0;33m'"🟩"'\033[0m'  ;\
+        ((number = number - 1)) ; \
+    done
+printf  '\033[u'""
+printf  "\033[1A"""
+printf  '\033[s'""
+printf '\033[0;34m'"🔷 Making the  --> "'\033[0m' 
+tput el
+mkdir -p obj
+mkdir -p obj/utils
+gcc -g -pthread  -c src/utils/ft_itoa.c -o obj/utils/ft_itoa.o
+tput civis
+printf ft_itoa.o"\n"
+printf  '\033[s'""
+printf "\033[1;0f"
+sleep 0.05
+number=-1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ; while [[ $number -ge 0 ]] ; do \
+        printf '\033[0;33m'"🟩"'\033[0m'  ;\
+        ((number = number - 1)) ; \
+    done
+printf  '\033[u'""
+printf  "\033[1A"""
+printf  '\033[s'""
+printf '\033[0;34m'"🔷 Making the  --> "'\033[0m' 
+tput el
+mkdir -p obj
+mkdir -p obj/utils
+gcc -g -pthread  -c src/utils/ft_atoi.c -o obj/utils/ft_atoi.o
+tput civis
+printf ft_atoi.o"\n"
+printf  '\033[s'""
+printf "\033[1;0f"
+sleep 0.05
+number=-1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ; while [[ $number -ge 0 ]] ; do \
+        printf '\033[0;33m'"🟩"'\033[0m'  ;\
+        ((number = number - 1)) ; \
+    done
+printf  '\033[u'""
+printf  "\033[1A"""
+printf  '\033[s'""
+printf '\033[0;34m'"🔷 Making the  --> "'\033[0m' 
+tput el
+printf  '\033[u'""
+tput el
+printf '\033[0;32m'"\rMaking is done ✅\n"'\033[0m'
+tput cvvis
+gcc -g -pthread  obj/main.o obj/parse.o obj/init.o obj/print_state.o obj/get_time.o obj/behaviors.o obj/check_die.o obj/ft_usleep.o obj/forks.o obj/create_process.o obj/send_kill.o obj/utils/ft_isdigit.o obj/utils/ft_putstr_fd.o obj/utils/ft_strcmp.o obj/utils/ft_itoa.o obj/utils/ft_atoi.o -o ./philo_bonus
 make: Leaving directory '/home/taha/desktop/Philosophers/philo_bonus'
  

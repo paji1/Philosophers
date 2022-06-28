@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 09:17:26 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/28 01:06:29 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/28 16:35:40 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,25 +21,35 @@ void	*philo_routine(void *philo)
 }
 
 
-
+int	wait_toeat( int state)
+{
+	if (state)
+	{
+		while (waitpid(-1, NULL, 0) != -1);
+			;
+	}
+}
 
 int main(int argc, char **argv)
 {
-	t_vars vars;
+	t_vars	vars;
+	pid_t	pid;
+	int	 	stat_loc;
 
 	if (parse(argc, argv))
 		return (1);
 	if (init(&vars, argc, argv))
 		return (1);
-	int l = create_process(&vars);
-	if (l)
+	if (create_process(&vars))
 	{
-		
-	int pid = waitpid(0, NULL, 0);
-	if (pid != -1)
-	{
-		send_kill(vars.pids, vars.nb_philo , pid);	
-	}
+		pid = waitpid(-1, &stat_loc, 0);
+		wait_toeat(stat_loc);
+		if (pid != -1)
+		{
+			send_kill(vars.pids, vars.nb_philo , pid);
+			sem_close(vars.sem_deat);
+			sem_close(vars.semaphore);
+		}
 	}
 	return (0);
 }

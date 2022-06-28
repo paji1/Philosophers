@@ -5,9 +5,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Tue Jun 28 15:46:01 2022
+# Make data base, printed on Tue Jun 28 16:19:14 2022
 
 # Variables
 
@@ -98,7 +97,7 @@ VSCODE_PIPE_LOGGING = true
 # environment
 WD = /mnt/c/Users/Taha/Downloads/
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-9ee02873-e10c-4c0f-a169-467246e7d4ff.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-ea07b4f7-4f9f-41b6-a972-2f4a5da2b450.sock
 # environment
 WSL_INTEROP = /run/WSL/11_interop
 # makefile (from 'makefile', line 46)
@@ -114,7 +113,7 @@ HOME = /home/taha
 # environment
 LOGNAME = taha
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 COLOR1 = \033[1;\033[1;31m
 # environment
@@ -274,13 +273,14 @@ src/forks.c:
 obj/get_time.o: src/get_time.c include/philo.h include/types.h include/utils.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'get_time'
-#  Last modified 2022-06-28 15:34:33.9756563
+#  Last modified 2022-06-28 16:17:46.2956563
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 71):
 	@ mkdir -p obj
 	@ mkdir -p obj/utils
 	@ $(CC) $(CFLAG) -c $< -o $@
+ 
 	@tput civis
 	$(eval x=$(x)+1)
 	@ printf $(notdir $@)"\n"
@@ -307,8 +307,7 @@ all: philo_bonus
 obj/utils/ft_strcmp.o: src/utils/ft_strcmp.c include/philo.h include/types.h include/utils.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'utils/ft_strcmp'
-#  Last modified 2022-06-28 15:34:35.0956563
- 
+#  Last modified 2022-06-28 16:17:47.3156563
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 71):
@@ -334,7 +333,7 @@ obj/utils/ft_strcmp.o: src/utils/ft_strcmp.c include/philo.h include/types.h inc
 obj/main.o: src/main.c include/philo.h include/types.h include/utils.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  Last modified 2022-06-28 15:34:33.4256563
+#  Last modified 2022-06-28 16:17:45.8356563
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 71):
@@ -360,7 +359,7 @@ obj/main.o: src/main.c include/philo.h include/types.h include/utils.h
 obj/utils/ft_putstr_fd.o: src/utils/ft_putstr_fd.c include/philo.h include/types.h include/utils.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'utils/ft_putstr_fd'
-#  Last modified 2022-06-28 15:34:35.0056563
+#  Last modified 2022-06-28 16:17:47.1956563
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 71):
@@ -407,7 +406,7 @@ src/get_time.c:
 obj/create_process.o: src/create_process.c include/philo.h include/types.h include/utils.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'create_process'
-#  Last modified 2022-06-28 15:34:34.6356563
+#  Last modified 2022-06-28 16:17:46.8456563
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 71):
@@ -433,7 +432,7 @@ obj/create_process.o: src/create_process.c include/philo.h include/types.h inclu
 obj/utils/ft_atoi.o: src/utils/ft_atoi.c include/philo.h include/types.h include/utils.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'utils/ft_atoi'
-#  Last modified 2022-06-28 15:34:35.3256563
+#  Last modified 2022-06-28 16:17:47.6056563
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 71):
@@ -466,7 +465,7 @@ src/utils/ft_strcmp.c:
 obj/check_die.o: src/check_die.c include/philo.h include/types.h include/utils.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'check_die'
-#  Last modified 2022-06-28 15:34:34.2356563
+#  Last modified 2022-06-28 16:17:46.5156563
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 71):
@@ -499,14 +498,14 @@ fclean: clean
 # Not a target:
 src/main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-28 01:06:29.966926
+#  Last modified 2022-06-28 16:17:38.0956563
 #  File has been updated.
 #  Successfully updated.
 
 obj/utils/ft_itoa.o: src/utils/ft_itoa.c include/philo.h include/types.h include/utils.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'utils/ft_itoa'
-#  Last modified 2022-06-28 15:34:35.2156563
+#  Last modified 2022-06-28 16:17:47.4656563
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 71):
@@ -539,7 +538,7 @@ src/utils/ft_putstr_fd.c:
 obj/ft_usleep.o: src/ft_usleep.c include/philo.h include/types.h include/utils.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'ft_usleep'
-#  Last modified 2022-06-28 15:34:34.3556563
+#  Last modified 2022-06-28 16:17:46.6256563
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 71):
@@ -571,7 +570,7 @@ obj/ft_usleep.o: src/ft_usleep.c include/philo.h include/types.h include/utils.h
 obj/utils/ft_isdigit.o: src/utils/ft_isdigit.c include/philo.h include/types.h include/utils.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'utils/ft_isdigit'
-#  Last modified 2022-06-28 15:34:34.8856563
+#  Last modified 2022-06-28 16:17:47.0556563
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 71):
@@ -579,6 +578,7 @@ obj/utils/ft_isdigit.o: src/utils/ft_isdigit.c include/philo.h include/types.h i
 	@ mkdir -p obj/utils
 	@ $(CC) $(CFLAG) -c $< -o $@
 	@tput civis
+ 
 	$(eval x=$(x)+1)
 	@ printf $(notdir $@)"\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
@@ -597,7 +597,7 @@ obj/utils/ft_isdigit.o: src/utils/ft_isdigit.c include/philo.h include/types.h i
 obj/behaviors.o: src/behaviors.c include/philo.h include/types.h include/utils.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'behaviors'
-#  Last modified 2022-06-28 15:34:34.0956563
+#  Last modified 2022-06-28 16:17:46.4156563
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 71):
@@ -623,15 +623,14 @@ obj/behaviors.o: src/behaviors.c include/philo.h include/types.h include/utils.h
 # Not a target:
 src/create_process.c:
 #  Implicit rule search has been done.
- 
-#  Last modified 2022-06-28 00:48:47.536926
+#  Last modified 2022-06-28 16:14:31.1256563
 #  File has been updated.
 #  Successfully updated.
 
 obj/print_state.o: src/print_state.c include/philo.h include/types.h include/utils.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'print_state'
-#  Last modified 2022-06-28 15:34:33.8156563
+#  Last modified 2022-06-28 16:17:46.1756563
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 71):
@@ -669,7 +668,7 @@ src/utils/ft_atoi.c:
 obj/parse.o: src/parse.c include/philo.h include/types.h include/utils.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'parse'
-#  Last modified 2022-06-28 15:34:33.5456563
+#  Last modified 2022-06-28 16:17:45.9556563
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 71):
@@ -703,7 +702,7 @@ clean:
 obj/init.o: src/init.c include/philo.h include/types.h include/utils.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'init'
-#  Last modified 2022-06-28 15:34:33.6656563
+#  Last modified 2022-06-28 16:17:46.0556563
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 71):
@@ -729,14 +728,14 @@ obj/init.o: src/init.c include/philo.h include/types.h include/utils.h
 # Not a target:
 src/check_die.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-28 15:18:55.2156563
+#  Last modified 2022-06-28 16:16:17.3656563
 #  File has been updated.
 #  Successfully updated.
 
 obj/send_kill.o: src/send_kill.c include/philo.h include/types.h include/utils.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'send_kill'
-#  Last modified 2022-06-28 15:34:34.7956563
+#  Last modified 2022-06-28 16:17:46.9556563
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 71):
@@ -762,7 +761,7 @@ obj/send_kill.o: src/send_kill.c include/philo.h include/types.h include/utils.h
 obj/forks.o: src/forks.c include/philo.h include/types.h include/utils.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'forks'
-#  Last modified 2022-06-28 15:34:34.4856563
+#  Last modified 2022-06-28 16:17:46.7356563
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 71):
@@ -794,7 +793,7 @@ src/utils/ft_itoa.c:
 
 philo_bonus: obj/main.o obj/parse.o obj/init.o obj/print_state.o obj/get_time.o obj/behaviors.o obj/check_die.o obj/ft_usleep.o obj/forks.o obj/create_process.o obj/send_kill.o obj/utils/ft_isdigit.o obj/utils/ft_putstr_fd.o obj/utils/ft_strcmp.o obj/utils/ft_itoa.o obj/utils/ft_atoi.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-28 15:34:35.4856563
+#  Last modified 2022-06-28 16:17:47.7956563
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 63):
@@ -821,14 +820,14 @@ src/utils/ft_isdigit.c:
 # Not a target:
 src/behaviors.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-28 15:20:53.4656563
+#  Last modified 2022-06-28 15:59:20.8956563
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/print_state.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-28 15:18:32.5556563
+#  Last modified 2022-06-28 15:53:07.5056563
 #  File has been updated.
 #  Successfully updated.
 
@@ -856,7 +855,7 @@ include/types.h:
 # Not a target:
 src/init.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-28 01:04:11.996926
+#  Last modified 2022-06-28 15:46:25.4856563
 #  File has been updated.
 #  Successfully updated.
 
@@ -875,12 +874,13 @@ src/send_kill.c:
 
 # No general ('VPATH' variable) search path.
 
+ 
 # strcache buffers: 1 (0) / strings = 90 / storage = 1131 B / avg = 12 B
 # current buf: size = 8162 B / used = 1131 B / count = 90 / avg = 12 B
 
 # strcache performance: lookups = 221 / hit rate = 59%
 # hash-table stats:
 # Load=90/8192=1%, Rehash=0, Collisions=3/221=1%
-# Finished Make data base on Tue Jun 28 15:46:01 2022
+# Finished Make data base on Tue Jun 28 16:19:14 2022
 
  

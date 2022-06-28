@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 18:42:05 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/28 00:48:47 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/28 16:14:31 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int create_philo_process(t_vars *vars, int id)
 {
-	t_philo philo;
-	pthread_t thread;
+	t_philo		philo;
+	pthread_t	thread;
 
 	philo.vars = vars;
 	philo.id = id;
@@ -26,6 +26,7 @@ int create_philo_process(t_vars *vars, int id)
 	philo_routine(&philo);
 	pthread_join(thread, NULL);
 }
+
 int	create_process(t_vars *vars)
 {
 	pid_t	pid;

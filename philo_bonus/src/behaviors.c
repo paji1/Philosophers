@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 20:19:31 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/28 15:20:53 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/28 16:27:34 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int eating(t_philo *philo)
 	return 0;
 }
 
-int do_until
+int	do_until
 	(int (*thinking)(t_philo *), int (*sleeping)(t_philo *)\
 		, int (*eating)(t_philo *), t_philo *philo)
 {
@@ -61,7 +61,7 @@ int do_until
 
 	i = 0;
 	while (1)
-	{	
+	{
 		take_forks(philo, &i);
 		if ((*eating)(philo))
 			return (1);

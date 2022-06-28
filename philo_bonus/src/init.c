@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 10:10:37 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/28 15:46:25 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/28 16:22:15 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ static void init_times(t_vars *vars, int argc, char **argv)
 	vars->n_num = 0;
 	if (argc == 6)
 		vars->must_to_eat = ft_atoi(argv[5]);
+	else
+		vars->must_to_eat = 0;
 }
 
 int	init(t_vars *vars, int argc, char **argv)
