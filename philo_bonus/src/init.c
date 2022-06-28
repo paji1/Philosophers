@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 10:10:37 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/28 01:04:11 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/28 15:46:25 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ static void init_times(t_vars *vars, int argc, char **argv)
 	vars->time_to_eat = ft_atoi(argv[3]);
 	vars->time_to_sleep = ft_atoi(argv[4]);
 	vars->nb_philo =  ft_atoi(argv[1]);
+	vars->n_num = 0;
 	if (argc == 6)
 		vars->must_to_eat = ft_atoi(argv[5]);
 }
