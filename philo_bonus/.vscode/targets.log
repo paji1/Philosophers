@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jun 27 23:06:53 2022
+# Make data base, printed on Tue Jun 28 15:27:31 2022
 
 # Variables
 
@@ -22,6 +22,8 @@ WSLENV = VSCODE_WSL_EXT_LOCATION/up
 OBJ = $(addprefix obj/, $(SRC:.c=.o))
 # makefile (from 'makefile', line 26)
 SRC = main.c  parse.c init.c print_state.c get_time.c behaviors.c check_die.c ft_usleep.c forks.c create_process.c send_kill.c
+# makefile (from 'makefile', line 18)
+HEADERS := include/philo.h include/types.h include/utils.h
 # environment
 VSCODE_LOG_NATIVE = false
 # automatic
@@ -44,8 +46,8 @@ _ = /home/taha/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/node
 o := 1
 # makefile (from 'makefile', line 53)
 r := 13
-# makefile (from 'makefile', line 69)
-x = -1+1
+# makefile (from 'makefile', line 52)
+x = -1
 # makefile (from 'makefile', line 1)
 MAKEFILE_LIST :=  makefile
 # 'override' directive
@@ -166,8 +168,6 @@ OLDPWD = /mnt/c/Users/Taha/AppData/Local/Programs/Microsoft VS Code
 .VARIABLES := 
 # automatic
 *F = $(notdir $*)
-# makefile (from 'makefile', line 16)
-OS = $(shell uname -s)
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -221,7 +221,7 @@ WSL_DISTRO_NAME = Ubuntu-18.04
 # environment
 COLOR3 = \033[1;\033[1;31m
 # variable set hash-table stats:
-# Load=105/1024=10%, Rehash=0, Collisions=11/161=7%
+# Load=105/1024=10%, Rehash=0, Collisions=14/144=10%
 
 # Pattern-specific Variable Values
 
@@ -229,14 +229,16 @@ COLOR3 = \033[1;\033[1;31m
 
 # Directories
 
+# include (device 2064, inode 70421): 3 files, no impossibilities so far.
 # . (device 2064, inode 70388): 8 files, no impossibilities.
+# src/utils (device 2064, inode 116538): 5 files, no impossibilities so far.
 # src (device 2064, inode 104487): 14 files, no impossibilities so far.
 
-# 22 files, no impossibilities in 2 directories.
+# 30 files, no impossibilities in 4 directories.
 
 # Implicit Rules
 
-obj/%.o: src/%.c
+obj/%.o: src/%.c include/philo.h include/types.h include/utils.h
 #  recipe to execute (from 'makefile', line 69):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
@@ -267,15 +269,15 @@ src/forks.c:
 #  File has been updated.
 #  Successfully updated.
 
-obj/get_time.o: src/get_time.c
+obj/get_time.o: src/get_time.c include/philo.h include/types.h include/utils.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'get_time'
-#  Last modified 2022-06-27 23:01:19.9209235
+#  Last modified 2022-06-28 15:27:05.3156563
 #  File has been updated.
 #  Successfully updated.
+ 
 #  recipe to execute (from 'makefile', line 69):
 	@ mkdir -p obj
- 
 	@ $(CC) $(CFLAG) -c $< -o $@
 	@tput civis
 	$(eval x=$(x)+1)
@@ -298,20 +300,62 @@ all: philo_bonus
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/19=0%
+#  Successfully updated.
 
-# Not a target:
-obj/utils/ft_strcmp.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+obj/utils/ft_strcmp.o: src/utils/ft_strcmp.c include/philo.h include/types.h include/utils.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'utils/ft_strcmp'
+#  Last modified 2022-06-28 15:27:06.1256563
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'makefile', line 69):
+	@ mkdir -p obj
+	@ $(CC) $(CFLAG) -c $< -o $@
+	@tput civis
+	$(eval x=$(x)+1)
+	@ printf $(notdir $@)"\n"
+	@ printf  ${CODE_SAVE_CURSOR}""
+	@ printf "\033[$(lines);0f"
+	@ sleep 0.03
+	@number=$x ; while [[ $$number -ge 0 ]] ; do \
+        printf ${YELLOW}"🟩"${NC}  ;\
+        ((number = number - 1)) ; \
+    done
+	@printf  ${CODE_RESTORE_CURSOR}""
+	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
+	@ printf  ${CODE_SAVE_CURSOR}""
+	printf ${RE}"🔷 Making the  --> "${NC} 
+	@tput el
 
-obj/main.o: src/main.c
+obj/main.o: src/main.c include/philo.h include/types.h include/utils.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  Last modified 2022-06-27 23:01:19.5609235
+#  Last modified 2022-06-28 15:27:04.8956563
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'makefile', line 69):
+	@ mkdir -p obj
+	@ $(CC) $(CFLAG) -c $< -o $@
+	@tput civis
+	$(eval x=$(x)+1)
+	@ printf $(notdir $@)"\n"
+	@ printf  ${CODE_SAVE_CURSOR}""
+	@ printf "\033[$(lines);0f"
+	@ sleep 0.03
+	@number=$x ; while [[ $$number -ge 0 ]] ; do \
+        printf ${YELLOW}"🟩"${NC}  ;\
+        ((number = number - 1)) ; \
+    done
+	@printf  ${CODE_RESTORE_CURSOR}""
+	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
+	@ printf  ${CODE_SAVE_CURSOR}""
+	printf ${RE}"🔷 Making the  --> "${NC} 
+	@tput el
+
+obj/utils/ft_putstr_fd.o: src/utils/ft_putstr_fd.c include/philo.h include/types.h include/utils.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'utils/ft_putstr_fd'
+#  Last modified 2022-06-28 15:27:06.0556563
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 69):
@@ -334,15 +378,16 @@ obj/main.o: src/main.c
 	@tput el
 
 # Not a target:
-obj/utils/ft_putstr_fd.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+include/philo.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-27 23:07:07.5809235
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-27 23:06:49.8809235
+#  Last modified 2022-06-28 15:27:02.5756563
 #  File has been updated.
 #  Successfully updated.
 
@@ -353,10 +398,35 @@ src/get_time.c:
 #  File has been updated.
 #  Successfully updated.
 
-obj/create_process.o: src/create_process.c
+obj/create_process.o: src/create_process.c include/philo.h include/types.h include/utils.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'create_process'
-#  Last modified 2022-06-27 23:01:20.3509235
+#  Last modified 2022-06-28 15:27:05.7856563
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'makefile', line 69):
+	@ mkdir -p obj
+	@ $(CC) $(CFLAG) -c $< -o $@
+	@tput civis
+	$(eval x=$(x)+1)
+	@ printf $(notdir $@)"\n"
+	@ printf  ${CODE_SAVE_CURSOR}""
+	@ printf "\033[$(lines);0f"
+	@ sleep 0.03
+	@number=$x ; while [[ $$number -ge 0 ]] ; do \
+        printf ${YELLOW}"🟩"${NC}  ;\
+        ((number = number - 1)) ; \
+    done
+	@printf  ${CODE_RESTORE_CURSOR}""
+	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
+	@ printf  ${CODE_SAVE_CURSOR}""
+	printf ${RE}"🔷 Making the  --> "${NC} 
+	@tput el
+
+obj/utils/ft_atoi.o: src/utils/ft_atoi.c include/philo.h include/types.h include/utils.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'utils/ft_atoi'
+#  Last modified 2022-06-28 15:27:06.3056563
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 69):
@@ -379,15 +449,16 @@ obj/create_process.o: src/create_process.c
 	@tput el
 
 # Not a target:
-obj/utils/ft_atoi.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/utils/ft_strcmp.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-27 18:11:33.8103798
+#  File has been updated.
+#  Successfully updated.
 
-obj/check_die.o: src/check_die.c
+obj/check_die.o: src/check_die.c include/philo.h include/types.h include/utils.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'check_die'
-#  Last modified 2022-06-27 23:01:20.0909235
+#  Last modified 2022-06-28 15:27:05.5256563
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 69):
@@ -419,20 +490,46 @@ fclean: clean
 # Not a target:
 src/main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-27 23:01:18.0009235
+#  Last modified 2022-06-28 01:06:29.966926
 #  File has been updated.
 #  Successfully updated.
 
-# Not a target:
-obj/utils/ft_itoa.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+obj/utils/ft_itoa.o: src/utils/ft_itoa.c include/philo.h include/types.h include/utils.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'utils/ft_itoa'
+#  Last modified 2022-06-28 15:27:06.2156563
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'makefile', line 69):
+	@ mkdir -p obj
+	@ $(CC) $(CFLAG) -c $< -o $@
+	@tput civis
+	$(eval x=$(x)+1)
+	@ printf $(notdir $@)"\n"
+	@ printf  ${CODE_SAVE_CURSOR}""
+	@ printf "\033[$(lines);0f"
+	@ sleep 0.03
+	@number=$x ; while [[ $$number -ge 0 ]] ; do \
+        printf ${YELLOW}"🟩"${NC}  ;\
+        ((number = number - 1)) ; \
+    done
+	@printf  ${CODE_RESTORE_CURSOR}""
+	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
+	@ printf  ${CODE_SAVE_CURSOR}""
+	printf ${RE}"🔷 Making the  --> "${NC} 
+	@tput el
 
-obj/ft_usleep.o: src/ft_usleep.c
+# Not a target:
+src/utils/ft_putstr_fd.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-27 18:11:33.8103798
+#  File has been updated.
+#  Successfully updated.
+
+obj/ft_usleep.o: src/ft_usleep.c include/philo.h include/types.h include/utils.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'ft_usleep'
-#  Last modified 2022-06-27 23:01:20.1809235
+#  Last modified 2022-06-28 15:27:05.6156563
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 69):
@@ -460,16 +557,36 @@ obj/ft_usleep.o: src/ft_usleep.c
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-obj/utils/ft_isdigit.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+obj/utils/ft_isdigit.o: src/utils/ft_isdigit.c include/philo.h include/types.h include/utils.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'utils/ft_isdigit'
+#  Last modified 2022-06-28 15:27:05.9656563
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'makefile', line 69):
+	@ mkdir -p obj
+	@ $(CC) $(CFLAG) -c $< -o $@
+	@tput civis
+	$(eval x=$(x)+1)
+	@ printf $(notdir $@)"\n"
+	@ printf  ${CODE_SAVE_CURSOR}""
+	@ printf "\033[$(lines);0f"
+	@ sleep 0.03
+ 
+	@number=$x ; while [[ $$number -ge 0 ]] ; do \
+        printf ${YELLOW}"🟩"${NC}  ;\
+        ((number = number - 1)) ; \
+    done
+	@printf  ${CODE_RESTORE_CURSOR}""
+	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
+	@ printf  ${CODE_SAVE_CURSOR}""
+	printf ${RE}"🔷 Making the  --> "${NC} 
+	@tput el
 
-obj/behaviors.o: src/behaviors.c
+obj/behaviors.o: src/behaviors.c include/philo.h include/types.h include/utils.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'behaviors'
-#  Last modified 2022-06-27 23:01:20.0009235
+#  Last modified 2022-06-28 15:27:05.4356563
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 69):
@@ -494,14 +611,14 @@ obj/behaviors.o: src/behaviors.c
 # Not a target:
 src/create_process.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-27 23:00:23.3809235
+#  Last modified 2022-06-28 00:48:47.536926
 #  File has been updated.
 #  Successfully updated.
 
-obj/print_state.o: src/print_state.c
+obj/print_state.o: src/print_state.c include/philo.h include/types.h include/utils.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'print_state'
-#  Last modified 2022-06-27 23:01:19.8409235
+#  Last modified 2022-06-28 15:27:05.1856563
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 69):
@@ -528,10 +645,17 @@ re: fclean all
 #  Modification time never checked.
 #  File has not been updated.
 
-obj/parse.o: src/parse.c
+# Not a target:
+src/utils/ft_atoi.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-27 18:11:33.8103798
+#  File has been updated.
+#  Successfully updated.
+
+obj/parse.o: src/parse.c include/philo.h include/types.h include/utils.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'parse'
-#  Last modified 2022-06-27 23:01:19.6609235
+#  Last modified 2022-06-28 15:27:05.0056563
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 69):
@@ -561,17 +685,16 @@ clean:
 	@ $(RM) $(OBJ)
 	@ $(RM) $(OBJ_UTILS)
 
-obj/init.o: src/init.c
+obj/init.o: src/init.c include/philo.h include/types.h include/utils.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'init'
-#  Last modified 2022-06-27 23:01:19.7509235
+#  Last modified 2022-06-28 15:27:05.0956563
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 69):
 	@ mkdir -p obj
 	@ $(CC) $(CFLAG) -c $< -o $@
 	@tput civis
- 
 	$(eval x=$(x)+1)
 	@ printf $(notdir $@)"\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
@@ -590,57 +713,14 @@ obj/init.o: src/init.c
 # Not a target:
 src/check_die.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-27 23:00:39.2309235
+#  Last modified 2022-06-28 15:18:55.2156563
 #  File has been updated.
 #  Successfully updated.
 
-obj/send_kill.o: src/send_kill.c
+obj/send_kill.o: src/send_kill.c include/philo.h include/types.h include/utils.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'send_kill'
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := obj/send_kill.o
-# automatic
-# % := 
-# automatic
-# * := send_kill
-# automatic
-# + := src/send_kill.c
-# automatic
-# | := 
-# automatic
-# < := src/send_kill.c
-# automatic
-# ^ := src/send_kill.c
-# automatic
-# ? := src/send_kill.c
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=6/30=20%
-#  recipe to execute (from 'makefile', line 69):
-	@ mkdir -p obj
-	@ $(CC) $(CFLAG) -c $< -o $@
-	@tput civis
-	$(eval x=$(x)+1)
-	@ printf $(notdir $@)"\n"
-	@ printf  ${CODE_SAVE_CURSOR}""
-	@ printf "\033[$(lines);0f"
-	@ sleep 0.03
-	@number=$x ; while [[ $$number -ge 0 ]] ; do \
-        printf ${YELLOW}"🟩"${NC}  ;\
-        ((number = number - 1)) ; \
-    done
-	@printf  ${CODE_RESTORE_CURSOR}""
-	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
-	@ printf  ${CODE_SAVE_CURSOR}""
-	printf ${RE}"🔷 Making the  --> "${NC} 
-	@tput el
-
-obj/forks.o: src/forks.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'forks'
-#  Last modified 2022-06-27 23:01:20.2609235
+#  Last modified 2022-06-28 15:27:05.8956563
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 69):
@@ -661,14 +741,44 @@ obj/forks.o: src/forks.c
 	@ printf  ${CODE_SAVE_CURSOR}""
 	printf ${RE}"🔷 Making the  --> "${NC} 
 	@tput el
+
+obj/forks.o: src/forks.c include/philo.h include/types.h include/utils.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'forks'
+#  Last modified 2022-06-28 15:27:05.7056563
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'makefile', line 69):
+	@ mkdir -p obj
+	@ $(CC) $(CFLAG) -c $< -o $@
+	@tput civis
+	$(eval x=$(x)+1)
+	@ printf $(notdir $@)"\n"
+	@ printf  ${CODE_SAVE_CURSOR}""
+	@ printf "\033[$(lines);0f"
+	@ sleep 0.03
+	@number=$x ; while [[ $$number -ge 0 ]] ; do \
+        printf ${YELLOW}"🟩"${NC}  ;\
+        ((number = number - 1)) ; \
+    done
+	@printf  ${CODE_RESTORE_CURSOR}""
+	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
+	@ printf  ${CODE_SAVE_CURSOR}""
+	printf ${RE}"🔷 Making the  --> "${NC} 
+	@tput el
+
+# Not a target:
+src/utils/ft_itoa.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-27 18:11:33.8103798
+#  File has been updated.
+#  Successfully updated.
 
 philo_bonus: obj/main.o obj/parse.o obj/init.o obj/print_state.o obj/get_time.o obj/behaviors.o obj/check_die.o obj/ft_usleep.o obj/forks.o obj/create_process.o obj/send_kill.o obj/utils/ft_isdigit.o obj/utils/ft_putstr_fd.o obj/utils/ft_strcmp.o obj/utils/ft_itoa.o obj/utils/ft_atoi.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-27 23:01:20.8809235
+#  Last modified 2022-06-28 15:27:06.4456563
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/19=0%
+#  Successfully updated.
 #  recipe to execute (from 'makefile', line 61):
 	@printf  ${CODE_RESTORE_CURSOR}""
 	@tput el
@@ -684,16 +794,23 @@ src/ft_usleep.c:
 #  Successfully updated.
 
 # Not a target:
+src/utils/ft_isdigit.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-27 18:11:33.8103798
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
 src/behaviors.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-27 22:29:44.7709235
+#  Last modified 2022-06-28 15:20:53.4656563
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/print_state.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-27 22:14:32.8533528
+#  Last modified 2022-06-28 15:18:32.5556563
 #  File has been updated.
 #  Successfully updated.
 
@@ -705,33 +822,47 @@ src/parse.c:
 #  Successfully updated.
 
 # Not a target:
+include/utils.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-27 18:11:33.8103798
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+include/types.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 00:33:39.216926
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
 src/init.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-27 22:56:49.6209235
+#  Last modified 2022-06-28 01:04:11.996926
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/send_kill.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-27 23:06:20.0509235
+#  Last modified 2022-06-28 00:45:25.616926
 #  File has been updated.
 #  Successfully updated.
 
 # files hash-table stats:
-# Load=35/1024=3%, Rehash=0, Collisions=0/100=0%
+# Load=43/1024=4%, Rehash=0, Collisions=33/219=15%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 68 / storage = 799 B / avg = 11 B
-# current buf: size = 8162 B / used = 799 B / count = 68 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 90 / storage = 1131 B / avg = 12 B
+# current buf: size = 8162 B / used = 1131 B / count = 90 / avg = 12 B
 
-# strcache performance: lookups = 97 / hit rate = 29%
+# strcache performance: lookups = 221 / hit rate = 59%
 # hash-table stats:
-# Load=68/8192=1%, Rehash=0, Collisions=3/97=3%
-# Finished Make data base on Mon Jun 27 23:06:53 2022
+# Load=90/8192=1%, Rehash=0, Collisions=3/221=1%
+# Finished Make data base on Tue Jun 28 15:27:31 2022
 
  

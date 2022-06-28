@@ -6,17 +6,19 @@
 #    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 04:31:34 by tel-mouh          #+#    #+#              #
-#    Updated: 2022/06/27 23:06:49 by tel-mouh         ###   ########.fr        #
+#    Updated: 2022/06/28 15:33:24 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SHELL := /bin/bash # Use bash syntax
 
-# ################OS#################################
-OS = $(shell uname -s)
+
+# #################Headers###########################
+
+HEADERS = philo.h types.h utils.h 
+HEADERS := $(addprefix include/, $(HEADERS))
 
 # ################COMMANDS###########################
-
 RM = rm -rf
 CC = gcc -g
 CFLAG = -pthread 
@@ -60,28 +62,29 @@ all : $(NAME)
 $(NAME): $(OBJ) $(OBJ_UTILS)
 	@printf  ${CODE_RESTORE_CURSOR}""
 	@tput el
-	@ printf ${GREEN}"\rMaking is done✅\n"${NC}
+	@ printf ${GREEN}"\rMaking is done ✅\n"${NC}
 	@ tput cvvis
 	@ $(CC) $(CFLAG) $(OBJ) $(OBJ_UTILS) -o $(NAME)
 
 
-obj/%.o : src/%.c 
+obj/%.o : src/%.c $(HEADERS)
 	@ mkdir -p obj
+	@ mkdir -p obj/utils
 	@ $(CC) $(CFLAG) -c $< -o $@
 	@tput civis
 	$(eval x=$(x)+1)
 	@ printf $(notdir $@)"\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
-	@ sleep 0.03
+	@ sleep 0.05
 	@number=$x ; while [[ $$number -ge 0 ]] ; do \
         printf ${YELLOW}"🟩"${NC}  ;\
         ((number = number - 1)) ; \
     done
 	@printf  ${CODE_RESTORE_CURSOR}""
 	@printf  ${CODE_CURSOR_IN_SCROLL_AREA}""
-	@ printf  ${CODE_SAVE_CURSOR}""
-	printf ${RE}"🔷 Making the  --> "${NC} 
+	@printf  ${CODE_SAVE_CURSOR}""
+	@printf ${RE}"🔷 Making the  --> "${NC} 
 	@tput el
 
 clean :
