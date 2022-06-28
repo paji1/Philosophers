@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 15:46:38 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/27 22:58:57 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/28 17:20:13 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	take_forks(t_philo *philo, int *i)
 	if (print_states(philo, TAKE_LEFT))
 		return (1);
 	sem_wait(philo->vars->semaphore);
-		// pthread_mutex_lock(&philo->vars->fork[philo->id % philo->vars->table->nb_philo]);
 	if (print_states(philo, TAKE_RIGHT))
 		return (1);
 	philo->state = EATING;

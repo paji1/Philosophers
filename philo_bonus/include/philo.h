@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 09:10:13 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/28 15:28:25 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/06/28 19:32:59 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ int		take_forks(t_philo *philo, int *i);
 int		realese_forks(t_philo *philo);
 int		create_process(t_vars *vars);
 int		send_kill(pid_t *pids, int nb, pid_t pid_rec);
+void	finish_eating(t_philo *philo);
 
 #endif
