@@ -6,13 +6,13 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 20:19:31 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/28 19:21:56 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/10/19 20:28:21 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
-int thinking(t_philo *philo)
+int	thinking(t_philo *philo)
 {
 	if (philo->state == THINKING)
 	{
@@ -22,7 +22,7 @@ int thinking(t_philo *philo)
 	return (0);
 }
 
-int sleeping(t_philo *philo)
+int	sleeping(t_philo *philo)
 {
 	if (philo->state == SLEPPING)
 	{
@@ -31,10 +31,10 @@ int sleeping(t_philo *philo)
 		ft_usleep(philo->vars->time_to_sleep * 1000, philo);
 		philo->state = THINKING;
 	}
-	return 0;
+	return (0);
 }
 
-int eating(t_philo *philo)
+int	eating(t_philo *philo)
 {
 	if (philo->state == EATING)
 	{
@@ -42,7 +42,9 @@ int eating(t_philo *philo)
 		if (print_states(philo, EATING))
 			return (1);
 		ft_usleep(philo->vars->time_to_eat * 1000, philo);
-		if (philo->vars->must_to_eat && philo->vars->n_num == philo->vars->nb_philo * philo->vars->must_to_eat)
+		if (philo->vars->must_to_eat && \
+			philo->vars->n_num == \
+			philo->vars->nb_philo * philo->vars->must_to_eat)
 		{
 			philo->vars->n_num += 1;
 			return (1);
@@ -50,11 +52,10 @@ int eating(t_philo *philo)
 		else
 			philo->vars->n_num += 1;
 	}
-	return 0;
+	return (0);
 }
 
-int	do_until
-	(int (*thinking)(t_philo *), int (*sleeping)(t_philo *)\
+int	do_until(int (*thinking)(t_philo *), int (*sleeping)(t_philo *)\
 		, int (*eating)(t_philo *), t_philo *philo)
 {
 	int	i;

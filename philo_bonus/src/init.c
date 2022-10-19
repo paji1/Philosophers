@@ -6,21 +6,18 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 10:10:37 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/28 16:22:15 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/10/19 20:35:31 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
-
-
-
-static void init_times(t_vars *vars, int argc, char **argv)
+static void	init_times(t_vars *vars, int argc, char **argv)
 {
 	vars->time_to_die = ft_atoi(argv[2]);
 	vars->time_to_eat = ft_atoi(argv[3]);
 	vars->time_to_sleep = ft_atoi(argv[4]);
-	vars->nb_philo =  ft_atoi(argv[1]);
+	vars->nb_philo = ft_atoi(argv[1]);
 	vars->n_num = 0;
 	if (argc == 6)
 		vars->must_to_eat = ft_atoi(argv[5]);

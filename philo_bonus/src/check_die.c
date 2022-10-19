@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 18:41:09 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/28 19:35:06 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/10/19 20:32:22 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*check_die(void *phil)
 {
-	t_philo *philo;
+	t_philo	*philo;
 
 	philo = (t_philo *)phil;
 	while (1)
@@ -23,7 +23,7 @@ void	*check_die(void *phil)
 		finish_eating(philo);
 		if (get_time(philo) - philo->last_eat > philo->vars->time_to_die)
 		{
-			printf("%ld %d is died\n", get_time(philo) , philo->id);
+			printf("%ld %d is died\n", get_time(philo), philo->id);
 			exit(EXIT_SUCCESS);
 		}
 		sem_post(philo->vars->sem_deat);

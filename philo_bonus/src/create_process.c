@@ -6,13 +6,13 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 18:42:05 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/28 17:31:44 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/10/19 20:33:31 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
-int create_philo_process(t_vars *vars, int id)
+int	create_philo_process(t_vars *vars, int id)
 {
 	t_philo		philo;
 	pthread_t	thread;
@@ -45,5 +45,5 @@ int	create_process(t_vars *vars)
 		if (!pid)
 			create_philo_process(vars, i + 1);
 	}
-	return pid;
+	return (pid);
 }

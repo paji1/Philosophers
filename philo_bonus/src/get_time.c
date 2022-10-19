@@ -6,17 +6,17 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 17:44:32 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/24 23:04:23 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/10/19 20:34:46 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
-long get_time(t_philo *philo)
+long	get_time(t_philo *philo)
 {
 	t_timeval	current_time;
-	long	eposh;
-	long	current; 
+	long		eposh;
+	long		current;
 
 	gettimeofday(&current_time, NULL);
 	current = current_time.tv_usec / 1000 + \

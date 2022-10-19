@@ -6,23 +6,21 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 17:43:12 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/28 19:35:12 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/10/19 20:40:01 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
-
-
-int print_states(t_philo *philo, int state)
+int	print_states(t_philo *philo, int state)
 {
 	sem_wait(philo->vars->sem_deat);
 	finish_eating(philo);
 	if (state == THINKING)
-		printf("%ld %d is thinking\n" , get_time(philo), philo->id);
-	else if (state == SLEPPING )
+		printf("%ld %d is thinking\n", get_time(philo), philo->id);
+	else if (state == SLEPPING)
 		printf("%ld %d is sleeping\n", get_time(philo), philo->id);
-	else if (state == EATING )
+	else if (state == EATING)
 		printf("%ld %d is eating \n", get_time(philo), philo->id);
 	else if (state == TAKE_LEFT)
 		printf("%ld %d has taken a left fork\n", get_time(philo), philo->id);
