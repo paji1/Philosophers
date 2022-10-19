@@ -6,13 +6,13 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 10:10:37 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/24 16:41:39 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/10/19 20:04:10 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
-static int create_table_ofthreads(t_vars *vars)
+static int	create_table_ofthreads(t_vars *vars)
 {
 	vars->threads = malloc(vars->table->nb_philo * sizeof(pthread_t));
 	if (!vars->threads)
@@ -20,7 +20,7 @@ static int create_table_ofthreads(t_vars *vars)
 	return (0);
 }
 
-static int init_philo_to_table(t_vars *vars, int nb)
+static int	init_philo_to_table(t_vars *vars, int nb)
 {
 	int	i;
 
@@ -31,7 +31,7 @@ static int init_philo_to_table(t_vars *vars, int nb)
 	return (0);
 }
 
-static void init_times(t_vars *vars, int argc, char **argv)
+static void	init_times(t_vars *vars, int argc, char **argv)
 {
 	vars->table->time_to_die = ft_atoi(argv[2]);
 	vars->table->time_to_eat = ft_atoi(argv[3]);
@@ -58,7 +58,7 @@ int	init(t_vars *vars, int argc, char **argv)
 	if (create_table_ofthreads(vars))
 		return (ft_free(&vars->table), 1);
 	if (init_mutexes(vars))
-		return (ft_free(&vars->table), 1);	
+		return (ft_free(&vars->table), 1);
 	gettimeofday(&vars->eposh, NULL);
 	if (create_threads(vars, nb))
 		return (1);

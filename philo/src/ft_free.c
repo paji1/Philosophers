@@ -6,16 +6,16 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 14:25:14 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/22 18:08:41 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/10/19 20:01:35 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
-void ft_free(t_table **table)
+void	ft_free(t_table **table)
 {
 	t_philo	*temp;
-	int 	i;
+	int		i;
 
 	i = -1;
 	if (!*table || !(*table)->head)
@@ -29,9 +29,8 @@ void ft_free(t_table **table)
 	free(*table);
 }
 
-void free_all(t_vars *vars)
+void	free_all(t_vars *vars)
 {
-	// printf("hello\n");
 	destroy_mutexs(vars);
 	free(vars->threads);
 	free(vars->fork);

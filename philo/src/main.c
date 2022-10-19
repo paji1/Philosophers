@@ -6,28 +6,29 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 09:17:26 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/25 17:29:00 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/10/19 20:07:47 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../include/philo.h"
 
 void	*philo_routine(void *philo)
 {
 	if (do_until(thinking, sleeping, eating, (t_philo *)philo))
-		return NULL;
-	return philo;
+		return (NULL);
+	return (philo);
 }
 
 int	check_all_philo(t_vars *vars)
 {
-	t_philo *philo;
+	t_philo	*philo;
 
 	philo = vars->table->head;
 	while (philo)
 	{
-		if (philo->vars->table->must_to_eat && philo->vars->n_num > philo->vars->table->nb_philo * philo->vars->table->must_to_eat)
+		if (philo->vars->table->must_to_eat && \
+			philo->vars->n_num > \
+			philo->vars->table->nb_philo * philo->vars->table->must_to_eat)
 		{	
 			detach_threads(vars);
 			return (1);
@@ -39,16 +40,16 @@ int	check_all_philo(t_vars *vars)
 			if (philo->vars->table->nb_philo == 1)
 				return (detach_threads(vars), 1);
 			else
-				return (join_threads(vars),1);
+				return (join_threads(vars), 1);
 		}
 		philo = philo->next;
 	}
 	return (0);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_vars *vars;
+	t_vars	*vars;
 
 	vars = malloc(sizeof(t_vars));
 	if (parse(argc, argv))
@@ -58,8 +59,7 @@ int main(int argc, char **argv)
 	if (check_all_philo(vars))
 		return (free_all(vars), 0);
 	join_threads(vars);
-	if(vars->is_died)
+	if (vars->is_died)
 		return (free_all(vars), 0);
 	return (free(vars->threads), free(vars), ft_free(&vars->table), 0);
 }
-

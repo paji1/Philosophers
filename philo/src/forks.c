@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 15:46:38 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/25 17:26:54 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/10/19 19:59:44 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ int	take_forks(t_philo *philo, int *i)
 	pthread_mutex_lock(&philo->vars->fork[philo->id - 1]);
 	if (print_states(philo, TAKE_LEFT))
 		return (1);
-	pthread_mutex_lock(&philo->vars->fork[philo->id % philo->vars->table->nb_philo]);
+	pthread_mutex_lock(\
+			&philo->vars->fork[philo->id % philo->vars->table->nb_philo] \
+		);
 	if (print_states(philo, TAKE_RIGHT))
 		return (1);
 	philo->state = EATING;
@@ -35,7 +37,9 @@ int	realese_forks(t_philo *philo)
 {
 	pthread_mutex_unlock(&philo->vars->fork[philo->id - 1]);
 	if (philo->vars->table->nb_philo != 1)
-		pthread_mutex_unlock(&philo->vars->fork[philo->id % philo->vars->table->nb_philo]);
+		pthread_mutex_unlock(\
+			&philo->vars->fork[philo->id % philo->vars->table->nb_philo] \
+		);
 	philo->state = SLEPPING;
 	return (0);
 }

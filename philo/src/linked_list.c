@@ -6,19 +6,19 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 13:26:37 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/06/22 21:44:14 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/10/19 20:04:57 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
-t_philo *add_new_philo(int nb)
+t_philo	*add_new_philo(int nb)
 {
 	static int		id;
 	t_philo			*philo;
-	
+
 	philo = (t_philo *)malloc(sizeof(t_philo));
-	if(!philo)
+	if (!philo)
 		return (NULL);
 	if (!id)
 		id = nb;
@@ -47,7 +47,6 @@ int	add_first(t_table *table, t_philo *new_philo)
 		return (0);
 	if (!table->head)
 	{
-		
 		table->head = new_philo;
 		table->head->next = new_philo;
 		table->head->prev = new_philo;
